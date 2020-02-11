@@ -5,9 +5,9 @@ using UnityEngine;
 public class SwitchCM : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject[] view;
+    public Transform[] view;
     public float traitionSpeed;
-    public GameObject currentView;
+   private Transform currentView;
 
     //public GameObject player;
     //private Vector3 offset;//distance between the player's position and camera's position.
@@ -23,6 +23,7 @@ public class SwitchCM : MonoBehaviour
         //offset = transform.position - player.transform.position;
         view[0].gameObject.SetActive(true);
         view[1].gameObject.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -72,8 +73,8 @@ public class SwitchCM : MonoBehaviour
 
     private void LateUpdate()
     {
-        ////transform.position = player.transform.position + offset;
-        //transform.position = Vector3.Lerp(transform.position, currentView.transform.position, Time.deltaTime * traitionSpeed);
+        //////transform.position = player.transform.position + offset;
+        //transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * traitionSpeed);
         //Vector3 currentAngle = new Vector3(
         //    Mathf.LerpAngle(transform.rotation.eulerAngles.x, currentView.transform.rotation.eulerAngles.x, Time.deltaTime * traitionSpeed),
         //    Mathf.LerpAngle(transform.rotation.eulerAngles.y, currentView.transform.rotation.eulerAngles.y, Time.deltaTime * traitionSpeed),

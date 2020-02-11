@@ -118,7 +118,7 @@ ModelImporter:
     4300002: polySurface235
     4300004: polySurface242
     4300006: polySurface258
-    7400000: walk
+    7400000: AT_walk
     9500000: //RootNode
     13700000: polySurface235
     13700002: polySurface242
@@ -158,7 +158,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: AT_walk
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 42
