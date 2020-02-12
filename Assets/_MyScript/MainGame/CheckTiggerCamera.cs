@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckTigger : MonoBehaviour
+public class CheckTiggerCamera : MonoBehaviour
 {
     // Start is called before the first frame update
    

@@ -9,7 +9,7 @@ public class SwitchCM : MonoBehaviour
     public Transform[] view;
     public float traitionSpeed;
     public Transform currentView;
-    public CheckTigger checkTigger;
+    public CheckTiggerCamera checkTigger;
 
     //public GameObject player;
     //private Vector3 offset;//distance between the player's position and camera's position.
