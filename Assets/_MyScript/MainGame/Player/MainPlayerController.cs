@@ -51,8 +51,12 @@ public class MainPlayerController : MonoBehaviour
     public bool Isjump = false;
     public Vector3 _centerCharacter;
 
+    [Header("CameraChagne")]
     public bool _isStayInCave;
-    
+
+    [Header("Timeline")]
+    public EventTimeline eventTimeline;
+    public Animation animationPlayer;
 
 
     // Start is called before the first frame update
@@ -88,11 +92,22 @@ public class MainPlayerController : MonoBehaviour
     {
         Debug.Log("move" + _moveSpeedCurrent);
         Debug.Log("start" + _startMoveSpeed);
-       
 
+        //testTimeline
+        if (eventTimeline.isTimeline)
+        {
+            GameManager.IsInputEnabled = false;
+            anim.SetTrigger("TimelineTime");
+        }
+        else
+        {
+            GameManager.IsInputEnabled = true;
+        }
+
+        //Control
         if (GameManager.IsInputEnabled && !GameManager.gameEnd) 
         {
-
+            
             float yStore = moveDirection.y;
             //float hMove = Input.GetAxis("Horizontal");
             //float VMove = Input.GetAxis("Vertical");
@@ -172,10 +187,12 @@ public class MainPlayerController : MonoBehaviour
 
             //CheckGround();
             //CheckBox();
-           
+
 
 
         }
+        
+        
     }
     public void FixedUpdate()
     {

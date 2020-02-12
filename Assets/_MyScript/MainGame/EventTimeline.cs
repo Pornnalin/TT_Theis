@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EventTimeline : MonoBehaviour
 {
+    public bool isTimeline = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        isTimeline = false;
     }
 
     // Update is called once per frame
@@ -18,11 +19,13 @@ public class EventTimeline : MonoBehaviour
 
      void PlayerStop()
     {
-        GameManager.IsInputEnabled = false;
+
+        isTimeline = true;
+        Debug.Log("stop");
     }
 
     void PlayerCanMove()
     {
-        GameManager.IsInputEnabled = true;
+        isTimeline = false;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 public class TriggerTimeLine : MonoBehaviour
 {
     public GameObject target;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,15 @@ public class TriggerTimeLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         PlayableDirector _target = target.GetComponent<PlayableDirector>();
         if (_target != null)
         {
             _target.Play();
+            
           
         }
+
+
     }
 }
