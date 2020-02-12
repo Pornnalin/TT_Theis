@@ -50,7 +50,10 @@ public class MainPlayerController : MonoBehaviour
     private Vector3 moveDirection_C;
     public bool Isjump = false;
     public Vector3 _centerCharacter;
+
+    public bool _isStayInCave;
     
+
 
     // Start is called before the first frame update
     void Start()
@@ -417,6 +420,11 @@ public class MainPlayerController : MonoBehaviour
             //anim.SetBool("IsClimb", true);
         }
 
+        if(other.gameObject.tag == "StayC")
+        {
+            _isStayInCave = true;
+        }
+
 
     }
 
@@ -428,15 +436,9 @@ public class MainPlayerController : MonoBehaviour
         anim.SetBool("IsHang", false);
         closeWay[0].SetActive(false);
         closeWay[1].SetActive(true);
-        //GameObject[] gameObj;
-        //gameObj = GameObject.FindGameObjectsWithTag("Getup");
-        //if (gameObj.Length == 1)
-        //{
-        //    gameObj[0].SetActive(false);
-        //    Debug.Log("find get up obj");
-        //}
-        //GameManager.IsInputEnabled = true;
-        //anim.SetBool("Hang to crouch", false);
+
+        _isStayInCave = false;
+
 
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)

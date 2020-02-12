@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ceiling
+  - Ground
+  - Ladder
+  - Ob_Box
+  - Enemy
+  - Getup
+  - FB
+  - CPC
+  - Box
+  - CheackNewMap
+  - StayC
   layers:
   - Default
   - TransparentFX

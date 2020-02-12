@@ -26,6 +26,7 @@ public class TriggerTimeLine : MonoBehaviour
         if (_target != null)
         {
             _target.Play();
+          
         }
     }
 }

@@ -9,7 +9,8 @@ public class SwitchCM : MonoBehaviour
     public Transform[] view;
     public float traitionSpeed;
     public Transform currentView;
-    public CheckTiggerCamera checkTigger;
+    //public CheckTiggerCamera checkTigger;
+
 
     //public GameObject player;
     //private Vector3 offset;//distance between the player's position and camera's position.
@@ -49,7 +50,23 @@ public class SwitchCM : MonoBehaviour
         //    switchInput = true;
         //}
 
-        switch (checkTigger._stay)
+        //switch (checkTigger._stay)
+        //{
+        //    case true:
+        //        currentView = view[1];
+
+        //        break;
+
+        //    case false:
+        //        currentView = view[0];
+
+        //        break;
+
+
+
+
+        //}
+        switch (MainPlayerController.instance._isStayInCave)
         {
             case true:
                 currentView = view[1];
@@ -65,7 +82,6 @@ public class SwitchCM : MonoBehaviour
 
 
         }
-
 
 
 
