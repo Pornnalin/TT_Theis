@@ -139,13 +139,21 @@ public class MainPlayerController : MonoBehaviour
 
                 _moveSpeedCurrent = 1f;
 
+                //CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
+                //mycc.height = 1.24f;
+                //mycc.center = new Vector3(0, 0.62f, 0);
+
+                //CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
+                //cc.height = 1.25f;
+                //cc.center = new Vector3(0, 0.64f, 0);
+
                 CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
-                mycc.height = 1.24f;
-                mycc.center = new Vector3(0, 0.62f, 0);
+                mycc.height = 0.93f;
+                mycc.center = new Vector3(0, 0.44f, 0);
 
                 CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
-                cc.height = 1.25f;
-                cc.center = new Vector3(0, 0.64f, 0);
+                cc.height = 0.89f;
+                cc.center = new Vector3(0, 0.43f, 0);
                 //charController.height = 1.25f;
 
 
