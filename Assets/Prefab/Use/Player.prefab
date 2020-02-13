@@ -108,6 +108,9 @@ MonoBehaviour:
   charController: {fileID: 0}
   Isjump: 0
   _centerCharacter: {x: 0, y: 0, z: 0}
+  _isStayInCave: 0
+  eventTimeline: {fileID: 0}
+  animationPlayer: {fileID: 0}
 --- !u!143 &42243583988126411
 CharacterController:
   m_ObjectHideFlags: 0
