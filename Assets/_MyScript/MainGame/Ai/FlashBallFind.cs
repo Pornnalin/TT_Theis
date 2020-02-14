@@ -29,13 +29,14 @@ public class FlashBallFind : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Player"))
                 {
 
-                       
-                    StartCoroutine(WaitForTurnOff());
+
+                    //StartCoroutine(WaitForTurnOff());
+                    GameManager._GameManager.SoundFound();
                     MainPlayerController.instance.anim.SetBool("IsDead", true);
                     Debug.Log(hitInfo.collider.gameObject.name);
                     Debug.Log("PlayerDead2");
                     spawnCase = true;
-                    GameManager.gameEnd = true;
+                    GameManager._gameEnd = true;
                   
                 }
 
@@ -52,7 +53,8 @@ public class FlashBallFind : MonoBehaviour
             findTarget = false;
             if (spawnCase)
             {
-                StartCoroutine(SpawnCase());
+                //StartCoroutine(SpawnCase());
+                GameManager._GameManager.SpawnCase();
                 distance = 0f;
                 spawnCase = false;
             }

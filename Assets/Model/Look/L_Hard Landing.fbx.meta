@@ -80,7 +80,7 @@ ModelImporter:
     3300000: default
     4300000: default
     4300002: character2:pTorus2
-    7400000: L_Hard Landing
+    7400000: L_Dead
     9500000: //RootNode
     13700000: character2:pTorus2
     2186277476908879412: ImportLogs
@@ -118,7 +118,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: L_Hard Landing
+      name: L_Dead
       takeName: mixamo.com
       firstFrame: 9
       lastFrame: 30

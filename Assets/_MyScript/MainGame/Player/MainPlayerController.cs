@@ -105,7 +105,7 @@ public class MainPlayerController : MonoBehaviour
         }
 
         //Control
-        if (GameManager.IsInputEnabled && !GameManager.gameEnd) 
+        if (GameManager.IsInputEnabled && !GameManager._gameEnd) 
         {
             
             float yStore = moveDirection.y;
@@ -199,6 +199,7 @@ public class MainPlayerController : MonoBehaviour
 
 
         }
+      
         
         
     }
@@ -525,6 +526,11 @@ public class MainPlayerController : MonoBehaviour
     //    //}
        
     //}
+
+   
+
+
+ 
 }
 
 

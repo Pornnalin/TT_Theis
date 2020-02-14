@@ -48,8 +48,16 @@ public class SoundManager : MonoBehaviour
                     break;
         }
     }
+
+
+   
+
 }
+
+
 public enum soundInGame
 {
     em_sound
 }
+
+

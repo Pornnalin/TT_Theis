@@ -5,10 +5,12 @@ using UnityEngine;
 public class DestroyGameObject : MonoBehaviour
 {
     public GameObject FB;
+    public GameObject Player;
     public float countTime;
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.GetComponent<Collider>().enabled = true;
 
     }
 
@@ -28,7 +30,22 @@ public class DestroyGameObject : MonoBehaviour
         if (other.gameObject.tag == "FB")
         {
             Destroy(FB, countTime);
-            
+
+        }
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Found Player");
+            GameManager._gameEnd = true;
+            GameManager._GameManager.SoundFound();
+            MainPlayerController.instance.anim.SetBool("IsDead", true);
+            GameManager._GameManager.SpawnCase();
+            this.gameObject.GetComponent<Collider>().enabled = false;
+
+        }
+        else
+        {
+            this.gameObject.GetComponent<Collider>().enabled = true;
+
         }
     }
 }

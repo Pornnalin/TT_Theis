@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager _GameManager;
     public static bool IsInputEnabled = true;
-    public static bool gameEnd = false;
+    public static bool _gameEnd = false;
     
    
 
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
 
         IsInputEnabled = true;
-        gameEnd = false;
+        _gameEnd = false;
     }
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameEnd == true) 
+        if (_gameEnd == true) 
         {
             //UIManager.iManager.endGameTxt.enabled = true;
             IsInputEnabled = false;
@@ -60,8 +60,40 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-  
-    
+    public void SpawnCase()
+    {
+        StartCoroutine(WaitSpawnCase());
+    }
+    IEnumerator WaitSpawnCase()
+    {
+        Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(3f);
+
+    }
+
+
+    public void SoundFound()
+    {
+        StartCoroutine(WaitForTurnOff());
+    }
+    IEnumerator WaitForTurnOff()
+    {
+        //anim.speed = 0;
+        //Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
+        SoundManager.soundManager.audioS.volume = 0.3f;
+        SoundManager.soundManager.PlaySound(soundInGame.em_sound);
+        yield return new WaitForSeconds(3f);
+        SoundManager.soundManager.audioS.volume = 0f;
+        TrasitionScene.Trasition.EndGame();
+
+
+
+
+
+    }
+
+
+
 
 
 }

@@ -34,10 +34,11 @@ public class Observer : MonoBehaviour
                 {
                     
                     _collider.enabled = true;
-
-                    StartCoroutine(WaitForTurnOff());
+                    anim.speed = 0;
+                    //StartCoroutine(WaitForTurnOff());
+                    GameManager._GameManager.SoundFound();
                     Debug.Log("HitPlaye");
-                    GameManager.gameEnd = true;
+                    GameManager._gameEnd = true;
                     MainPlayerController.instance.anim.SetBool("IsDead", true);
                     GameManager.IsInputEnabled = false;
                     spawnCase = true;
@@ -50,7 +51,8 @@ public class Observer : MonoBehaviour
         {
             if (spawnCase)
             {
-                StartCoroutine(SpawnCase());
+                //StartCoroutine(SpawnCase());
+                GameManager._GameManager.SpawnCase();
                 _collider.enabled = false;
                 CapsuleCollider cc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
                 cc.isTrigger = false;
@@ -78,29 +80,29 @@ public class Observer : MonoBehaviour
         }
     }
 
-    IEnumerator WaitForTurnOff()
-    {
-        anim.speed = 0;
-        //Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
-        SoundManager.soundManager.audioS.volume = 0.3f;
-        SoundManager.soundManager.PlaySound(soundInGame.em_sound);
-        yield return new WaitForSeconds(3f);
-        SoundManager.soundManager.audioS.volume = 0f;
-        TrasitionScene.Trasition.EndGame();
+    //IEnumerator WaitForTurnOff()
+    //{
+    //    //anim.speed = 0;
+    //    //Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
+    //    SoundManager.soundManager.audioS.volume = 0.3f;
+    //    SoundManager.soundManager.PlaySound(soundInGame.em_sound);
+    //    yield return new WaitForSeconds(3f);
+    //    SoundManager.soundManager.audioS.volume = 0f;
+    //    TrasitionScene.Trasition.EndGame();
        
         
 
 
 
-    }
+    //}
 
-    IEnumerator SpawnCase()
-    {
+    //IEnumerator SpawnCase()
+    //{
 
-        Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(7f);
+    //    Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
+    //    yield return new WaitForSeconds(7f);
        
-    }
+    //}
 
 
 

@@ -36,6 +36,7 @@ public class AiFindPlayer : MonoBehaviour
 
                     //StartCoroutine(WaitForTurnOff());
                     SpawnParticle();
+                    //GameManager._GameManager.SoundFound();
                     //MainPlayerController.instance.anim.SetBool("IsDead", true);
                     Debug.Log(hitInfo.collider.gameObject.name);
                     Debug.Log("PlayerDead");
@@ -64,6 +65,7 @@ public class AiFindPlayer : MonoBehaviour
             if (spawnCase)
             {
                 //StartCoroutine(SpawnCase());
+                //GameManager._GameManager.SpawnCase();
                 distance = 0f;
                 spawnCase = false;
             }
