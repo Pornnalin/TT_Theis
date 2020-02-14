@@ -10,17 +10,20 @@ public class AiFindPlayer : MonoBehaviour
     //public float[] test;
     private bool spawnCase = false;
     private bool findTarget;
+
     //public Transform[] postitionRay;
 
-    public GameObject particle;
-   
-   
+    //public GameObject particle;
+    //public Transform postionSpawn;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         findTarget = true;
         //test = number._distane;
+       
         
     }
 
@@ -45,7 +48,7 @@ public class AiFindPlayer : MonoBehaviour
                     //    Debug.Log("CloseRaycast");
                     //}
                     //StartCoroutine(WaitForTurnOff());
-                    SpawnParticle();
+                    //SpawnParticle();
                     GameManager._GameManager.SoundFound();
                     MainPlayerController.instance.anim.SetBool("IsDead", true);
                     Debug.Log(hitInfo.collider.gameObject.name);
@@ -53,8 +56,7 @@ public class AiFindPlayer : MonoBehaviour
                     GameManager._gameEnd = true;
                     spawnCase = true;
                     findTarget = false;
-                    BoxCollider cc = GetComponent(typeof(BoxCollider)) as BoxCollider;
-                    cc.gameObject.SetActive(false);
+                  
 
                 }
 
@@ -90,7 +92,7 @@ public class AiFindPlayer : MonoBehaviour
 
         //soundManager.PlaySound(SoundManager.soundInGame.em_sound);
     }
-    
+
 
     //IEnumerator WaitForTurnOff()
     //{
@@ -110,11 +112,12 @@ public class AiFindPlayer : MonoBehaviour
 
     //}
 
-    public void SpawnParticle()
-    {
-        GameObject _spark = Instantiate(particle, transform.position, transform.rotation) as GameObject;
-        _spark.transform.parent = MainPlayerController.instance.transform;
-    }
+    //public void SpawnParticle()
+    //{
+    //    GameObject _spark = Instantiate(particle, postionSpawn.transform.position, Quaternion.identity) as GameObject;
+    //    _spark.transform.parent = MainPlayerController.instance.playerModel.transform;
+    //    postionSpawn.transform.LookAt(MainPlayerController.instance.playerModel.transform);
+    //}
 }
 //[SerializeField]
 //[System.Serializable]

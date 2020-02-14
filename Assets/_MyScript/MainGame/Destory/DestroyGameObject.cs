@@ -23,20 +23,10 @@ public class DestroyGameObject : MonoBehaviour
 
    public void OnTriggerEnter(Collider other)
     {
-       
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "FB")
-        {
-            Destroy(FB, countTime);
-
-        }
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Found Player");
-            SpawnParticle();
+            Debug.Log("Found Player2");
+            //SpawnParticle();
             GameManager._gameEnd = true;
             GameManager._GameManager.SoundFound();
             MainPlayerController.instance.anim.SetBool("IsDead", true);
@@ -51,9 +41,35 @@ public class DestroyGameObject : MonoBehaviour
         }
     }
 
-    public void SpawnParticle()
+    public void OnTriggerStay(Collider other)
     {
-        GameObject _spark = Instantiate(par, transform.position, transform.rotation) as GameObject;
-        _spark.transform.parent = MainPlayerController.instance.transform;
+        if (other.gameObject.tag == "FB")
+        {
+            Destroy(FB, countTime);
+
+        }
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Found Player");
+            //SpawnParticle();
+            GameManager._gameEnd = true;
+            GameManager._GameManager.SoundFound();
+            MainPlayerController.instance.anim.SetBool("IsDead", true);
+            GameManager._GameManager.SpawnCase();
+            this.gameObject.GetComponent<Collider>().enabled = false;
+
+        }
+        else
+        {
+            this.gameObject.GetComponent<Collider>().enabled = true;
+
+        }
     }
+
+
+    //public void SpawnParticle()
+    //{
+    //    GameObject _spark = Instantiate(par, transform.position, transform.rotation) as GameObject;
+    //    _spark.transform.parent = MainPlayerController.instance.transform;
+    //}
 }

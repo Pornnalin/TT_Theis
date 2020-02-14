@@ -35,6 +35,7 @@ public class MainPlayerController : MonoBehaviour
     public int num = 0;
     //private Collider _colliderCha;
     public GameObject _checkCeilie;
+    public GameObject sphereCheck;
 
 
     [Header("CheckDistGround")]
@@ -73,6 +74,7 @@ public class MainPlayerController : MonoBehaviour
 
         checkPointControl = GameObject.FindGameObjectWithTag("CPC").GetComponent<CheckPointControl>();
         transform.position = checkPointControl.lastCheckPos;
+        //sphereCheck.SetActive(false);
 
     }
     private void Awake()
@@ -138,22 +140,30 @@ public class MainPlayerController : MonoBehaviour
             {
 
                 _moveSpeedCurrent = 1f;
-
-                //CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
-                //mycc.height = 1.24f;
-                //mycc.center = new Vector3(0, 0.62f, 0);
-
-                //CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
-                //cc.height = 1.25f;
-                //cc.center = new Vector3(0, 0.64f, 0);
-
+                if(Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D))
+                {
+                    sphereCheck.SetActive(true);
+                    Debug.Log("danger");
+                }
+                else
+                {
+                    sphereCheck.SetActive(false);
+                }
                 CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
-                mycc.height = 0.93f;
-                mycc.center = new Vector3(0, 0.44f, 0);
+                mycc.height = 1.24f;
+                mycc.center = new Vector3(0, 0.62f, 0);
 
                 CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
-                cc.height = 0.89f;
-                cc.center = new Vector3(0, 0.43f, 0);
+                cc.height = 1.25f;
+                cc.center = new Vector3(0, 0.64f, 0);
+
+                //CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
+                //mycc.height = 0.93f;
+                //mycc.center = new Vector3(0, 0.44f, 0);
+
+                //CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
+                //cc.height = 0.89f;
+                //cc.center = new Vector3(0, 0.43f, 0);
                 //charController.height = 1.25f;
 
 

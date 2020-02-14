@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class UiManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit");
     }
+
+
 }
 
     
