@@ -51,8 +51,8 @@ public class Observer : MonoBehaviour
         {
             if (spawnCase)
             {
-                //StartCoroutine(SpawnCase());
-                GameManager._GameManager.SpawnCase();
+                StartCoroutine(SpawnCase());
+                //GameManager._GameManager.SpawnCase();
                 _collider.enabled = false;
                 CapsuleCollider cc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
                 cc.isTrigger = false;
@@ -89,20 +89,20 @@ public class Observer : MonoBehaviour
     //    yield return new WaitForSeconds(3f);
     //    SoundManager.soundManager.audioS.volume = 0f;
     //    TrasitionScene.Trasition.EndGame();
-       
-        
+
+
 
 
 
     //}
 
-    //IEnumerator SpawnCase()
-    //{
+    IEnumerator SpawnCase()
+    {
 
-    //    Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
-    //    yield return new WaitForSeconds(7f);
-       
-    //}
+        Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(7f);
+
+    }
 
 
 

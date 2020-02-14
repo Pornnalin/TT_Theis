@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
+  postitionRay: []
   particle: {fileID: 0}
 --- !u!1 &1637791285302420584
 GameObject:
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 10
+  postitionRay: []
   particle: {fileID: 0}
 --- !u!1 &1637791285499826981
 GameObject:
@@ -196,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 10
+  postitionRay: []
   particle: {fileID: 0}
 --- !u!1 &1637791285864716472
 GameObject:
@@ -2255,6 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 5
+  postitionRay: []
   particle: {fileID: 0}
 --- !u!1 &4752266647217158759
 GameObject:
@@ -2268,6 +2272,7 @@ GameObject:
   - component: {fileID: 4645826230484353981}
   - component: {fileID: 151294450575011553}
   - component: {fileID: 5017923288139474438}
+  - component: {fileID: 8915326104890827710}
   m_Layer: 0
   m_Name: checkPlayer
   m_TagString: Untagged
@@ -2347,3 +2352,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: -0.0000047683716, y: 0, z: -0.00000095367426}
+--- !u!114 &8915326104890827710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752266647217158759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5ac20dd6f4001449c4f8b9de2df418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FB: {fileID: 0}
+  Player: {fileID: 0}
+  par: {fileID: 3012289094740201733, guid: 0b005f8a1801b124f90fbc262d9d3a09, type: 3}
+  countTime: 0

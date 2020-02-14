@@ -10,7 +10,7 @@ public class AiFindPlayer : MonoBehaviour
     //public float[] test;
     private bool spawnCase = false;
     private bool findTarget;
-    public Transform[] postitionRay;
+    //public Transform[] postitionRay;
 
     public GameObject particle;
    
@@ -38,19 +38,20 @@ public class AiFindPlayer : MonoBehaviour
             { 
                 if (hitInfo.collider.CompareTag("Player"))
                 {
-                    foreach(Transform t in postitionRay)
-                    {
-                        t.gameObject.SetActive(false);
-                        Debug.Log("CloseRaycast");
-                    }
+                    //foreach(Transform t in postitionRay)
+                    //{
+                    //    t.gameObject.SetActive(false);
+                    //    this.gameObject.SetActive(true);
+                    //    Debug.Log("CloseRaycast");
+                    //}
                     //StartCoroutine(WaitForTurnOff());
                     SpawnParticle();
-                    //GameManager._GameManager.SoundFound();
-                    //MainPlayerController.instance.anim.SetBool("IsDead", true);
+                    GameManager._GameManager.SoundFound();
+                    MainPlayerController.instance.anim.SetBool("IsDead", true);
                     Debug.Log(hitInfo.collider.gameObject.name);
                     Debug.Log("PlayerDead");
+                    GameManager._gameEnd = true;
                     spawnCase = true;
-                    //GameManager.gameEnd = true;
 
                 }
 
@@ -74,7 +75,10 @@ public class AiFindPlayer : MonoBehaviour
             if (spawnCase)
             {
                 //StartCoroutine(SpawnCase());
-                //GameManager._GameManager.SpawnCase();
+              
+                EnemyController.enemyController.currentState = EnemyController.AIState.isIdle;
+                EnemyController.enemyController.anim.speed = 0f;
+                GameManager._GameManager.SpawnCase();
                 distance = 0f;
                 spawnCase = false;
             }
@@ -105,8 +109,8 @@ public class AiFindPlayer : MonoBehaviour
 
     public void SpawnParticle()
     {
-        GameObject _spaek = Instantiate(particle, transform.position, transform.rotation) as GameObject;
-        _spaek.transform.parent = MainPlayerController.instance.transform;
+        GameObject _spark = Instantiate(particle, transform.position, transform.rotation) as GameObject;
+        _spark.transform.parent = MainPlayerController.instance.transform;
     }
 }
 //[SerializeField]

@@ -6,6 +6,7 @@ public class DestroyGameObject : MonoBehaviour
 {
     public GameObject FB;
     public GameObject Player;
+    public GameObject par;
     public float countTime;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class DestroyGameObject : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Found Player");
+            SpawnParticle();
             GameManager._gameEnd = true;
             GameManager._GameManager.SoundFound();
             MainPlayerController.instance.anim.SetBool("IsDead", true);
@@ -47,5 +49,11 @@ public class DestroyGameObject : MonoBehaviour
             this.gameObject.GetComponent<Collider>().enabled = true;
 
         }
+    }
+
+    public void SpawnParticle()
+    {
+        GameObject _spark = Instantiate(par, transform.position, transform.rotation) as GameObject;
+        _spark.transform.parent = MainPlayerController.instance.transform;
     }
 }

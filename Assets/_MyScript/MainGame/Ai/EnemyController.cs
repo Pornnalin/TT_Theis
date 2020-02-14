@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    public static EnemyController enemyController;
     public Transform[] patrolPoint;
     public int currentPatrolPoint;
 
@@ -28,6 +29,18 @@ public class EnemyController : MonoBehaviour
         waitCounter = waitAtPoint;
        
         agent.baseOffset = -0.1f;
+    }
+    private void Awake()
+    {
+        if (enemyController == null)
+        {
+            enemyController = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
     // Update is called once per frame
