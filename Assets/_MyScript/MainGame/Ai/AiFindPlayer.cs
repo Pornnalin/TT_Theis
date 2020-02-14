@@ -5,9 +5,12 @@ using UnityEngine;
 public class AiFindPlayer : MonoBehaviour
 {
     //public float rotationSpeed;
+    //public Number number;
     public float distance;
+    //public float[] test;
     private bool spawnCase = false;
     private bool findTarget;
+    public Transform[] postitionRay;
 
     public GameObject particle;
    
@@ -17,7 +20,8 @@ public class AiFindPlayer : MonoBehaviour
     void Start()
     {
         findTarget = true;
-       
+        //test = number._distane;
+        
     }
 
     // Update is called once per frame
@@ -25,15 +29,20 @@ public class AiFindPlayer : MonoBehaviour
     {
         //RaycastHit hit;
         //Vector3 direction = transform.TransformDirection(Vector3.forward) * 10;
-        if (GameManager.IsInputEnabled && findTarget)  
+        if (GameManager.IsInputEnabled && findTarget)
         {
-            Ray ray = new Ray(transform.position, transform.forward);
+            Ray ray= new Ray(transform.position, transform.forward);
+          
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, distance))
-            {
+            { 
                 if (hitInfo.collider.CompareTag("Player"))
                 {
-
+                    foreach(Transform t in postitionRay)
+                    {
+                        t.gameObject.SetActive(false);
+                        Debug.Log("CloseRaycast");
+                    }
                     //StartCoroutine(WaitForTurnOff());
                     SpawnParticle();
                     //GameManager._GameManager.SoundFound();
@@ -100,3 +109,13 @@ public class AiFindPlayer : MonoBehaviour
         _spaek.transform.parent = MainPlayerController.instance.transform;
     }
 }
+//[SerializeField]
+//[System.Serializable]
+//public class Number
+//{
+//    public float[] _distane;
+   
+//}
+
+
+
