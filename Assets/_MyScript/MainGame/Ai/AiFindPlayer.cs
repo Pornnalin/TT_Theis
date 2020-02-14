@@ -52,6 +52,9 @@ public class AiFindPlayer : MonoBehaviour
                     Debug.Log("PlayerDead");
                     GameManager._gameEnd = true;
                     spawnCase = true;
+                    findTarget = false;
+                    BoxCollider cc = GetComponent(typeof(BoxCollider)) as BoxCollider;
+                    cc.gameObject.SetActive(false);
 
                 }
 

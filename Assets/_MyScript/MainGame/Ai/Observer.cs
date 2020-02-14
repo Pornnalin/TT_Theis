@@ -51,8 +51,8 @@ public class Observer : MonoBehaviour
         {
             if (spawnCase)
             {
-                StartCoroutine(SpawnCase());
-                //GameManager._GameManager.SpawnCase();
+                //StartCoroutine(SpawnCase());
+                GameManager._GameManager.SpawnCase();
                 _collider.enabled = false;
                 CapsuleCollider cc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
                 cc.isTrigger = false;
