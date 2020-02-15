@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyGameObject : MonoBehaviour
 {
     public GameObject FB;
-    public GameObject Player;
+    //public GameObject Player;
     public GameObject par;
     public float countTime;
     // Start is called before the first frame update

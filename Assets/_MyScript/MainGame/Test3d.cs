@@ -95,7 +95,16 @@ public class Test3d : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
 
-            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, 10f * Time.deltaTime);
+
+            charController.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, 10f * Time.deltaTime);
+            
+            //Vector3 move = new Vector3(0, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime);
+            //if (moveDirection != Vector3.zero)
+            //    transform.rotation = Quaternion.LookRotation(moveDirection);
+            //charController.Move(moveDirection / 100);
+
+
+
 
             //jump
             if (charController.isGrounded)
