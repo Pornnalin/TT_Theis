@@ -8,6 +8,7 @@ public class GrabRotation : MonoBehaviour
     public float speedRotation = 5f;
     [SerializeField]
     public Vector3 originalRotation;
+    //Quaternion originalRotation;
     public float XaxisRotaion;
     public float YaxisRotaion;
     public float count;
@@ -16,18 +17,20 @@ public class GrabRotation : MonoBehaviour
 
     private void Start()
     {
-        originalRotation = gameObject.transform.localEulerAngles;
+        originalRotation = transform.rotation.eulerAngles;
         time = count;
     }
     void OnMouseDrag()
     {
-         XaxisRotaion = Input.GetAxis("Mouse X") * speedRotation;
-         YaxisRotaion = Input.GetAxis("Mouse Y") * speedRotation;
+        XaxisRotaion = Input.GetAxis("Mouse X") * speedRotation;
+        YaxisRotaion = Input.GetAxis("Mouse Y") * speedRotation;
 
+        //Vector3 XaxisRotaion = new Vector3(Input.GetAxis("Mouse X") * speedRotation, 0, 0);
 
         //transform.Rotate(Vector3.right, YaxisRotaion);
         transform.Rotate(Vector3.down, XaxisRotaion);
-        
+
+
     }
     public void Update()
     {
@@ -49,7 +52,8 @@ public class GrabRotation : MonoBehaviour
         //SoundManager.soundManager.PlaySound(soundInGame.countDown);
         _wait = true;
         yield return new WaitForSeconds(count);
-        transform.eulerAngles = new Vector3(originalRotation.x, originalRotation.y, 0);
+        //transform.eulerAngles = new Vector3(originalRotation.x, originalRotation.y, 0);
+
         Debug.Log("Original");
         //SoundManager.soundManager.audioS.volume = 0f;
     }
