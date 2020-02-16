@@ -120,8 +120,8 @@ ModelImporter:
     - serializedVersion: 16
       name: L_Falling To Landing
       takeName: mixamo.com
-      firstFrame: 15.2
-      lastFrame: 32
+      firstFrame: 15.1
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -2,33 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ladder : MonoBehaviour
+public class DeadZoneTrigger : MonoBehaviour
 {
-    public GameObject triToWarp;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Found ladder");
-            triToWarp.SetActive(true);
+            GameManager._gameEnd = true;
+            TrasitionScene.Trasition.LoadSceneCurrent();
+            //GameManager._GameManager.SoundFound();
+        
+            //GameManager._GameManager.SpawnCase();
 
         }
     }
-    public void OnTriggerExit(Collider other)
-    {
-        triToWarp.SetActive(false);
-        
-    }
+
+    
+
 }

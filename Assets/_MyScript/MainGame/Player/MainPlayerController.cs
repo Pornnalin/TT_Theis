@@ -69,7 +69,7 @@ public class MainPlayerController : MonoBehaviour
         anim.SetBool("Jump", false);
         //current = transform.position;
         _startMoveSpeed = _moveSpeedCurrent;
-        closeWay[1].SetActive(false);
+        closeWay[0].SetActive(false);
         _centerCharacter = charController.center;
 
         checkPointControl = GameObject.FindGameObjectWithTag("CPC").GetComponent<CheckPointControl>();
@@ -96,15 +96,15 @@ public class MainPlayerController : MonoBehaviour
         Debug.Log("start" + _startMoveSpeed);
 
         //testTimeline
-        if (eventTimeline.isTimeline)
-        {
-            GameManager.IsInputEnabled = false;
-            anim.SetTrigger("TimelineTime");
-        }
-        else
-        {
-            GameManager.IsInputEnabled = true;
-        }
+        //if (eventTimeline.isTimeline)
+        //{
+        //    GameManager.IsInputEnabled = false;
+        //    anim.SetTrigger("TimelineTime");
+        //}
+        //else
+        //{
+        //    GameManager.IsInputEnabled = true;
+        //}
 
         //Control
         if (GameManager.IsInputEnabled && !GameManager._gameEnd) 

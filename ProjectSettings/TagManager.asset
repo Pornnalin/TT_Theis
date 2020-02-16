@@ -15,6 +15,7 @@ TagManager:
   - Box
   - CheackNewMap
   - StayC
+  - DeadZone
   layers:
   - Default
   - TransparentFX
