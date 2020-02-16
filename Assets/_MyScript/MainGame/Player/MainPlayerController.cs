@@ -21,7 +21,7 @@ public class MainPlayerController : MonoBehaviour
 
     [Header("Climb")]
     public bool isClimb = false;
-    public Vector3 current;
+    //public Vector3 current;
     //Rigidbody rigidbody;
     public float _speedCilmb;
     public Transform labber;
@@ -67,7 +67,7 @@ public class MainPlayerController : MonoBehaviour
         charController = GetComponent<CharacterController>();
         distanceGround = GetComponent<Collider>().bounds.extents.y;
         anim.SetBool("Jump", false);
-        current = transform.position;
+        //current = transform.position;
         _startMoveSpeed = _moveSpeedCurrent;
         closeWay[1].SetActive(false);
         _centerCharacter = charController.center;
@@ -269,6 +269,7 @@ public class MainPlayerController : MonoBehaviour
                     anim.SetBool("IsClimb", true);
                     Debug.Log("down");
 
+
                     //CapsuleCollider mycc = GetComponent(typeof(CapsuleCollider)) as CapsuleCollider;
                     //mycc.height = 1.35f;
                     //mycc.center = new Vector3(0, 1.71f, 0);
@@ -379,7 +380,7 @@ public class MainPlayerController : MonoBehaviour
         moveDirection.y = 0f;
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !Isjump && !isCrouched && !isStartCrouched)
+        if (Input.GetKeyDown(KeyCode.Space) && !Isjump && !isCrouched && !isStartCrouched) 
         {
 
             moveDirection.y = jumpForce;
@@ -434,10 +435,9 @@ public class MainPlayerController : MonoBehaviour
         //    anim.SetBool("Hang to crouch",true);
         //}
         
-
         if (other.gameObject.tag == "Getup")
         {
-            transform.Translate(Vector3.right * 2);
+            transform.Translate(Vector3.right * 1.5f);
             anim.SetBool("IsClimb", false);
             
             Debug.Log("can get up");
@@ -467,11 +467,12 @@ public class MainPlayerController : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         isClimb = false;
+        Debug.Log("OutClimbAnimation");
         anim.SetBool("IsClimb", false);
         gravityScale = 3;
         anim.SetBool("IsHang", false);
-        closeWay[0].SetActive(false);
-        closeWay[1].SetActive(true);
+        //closeWay[0].SetActive(false);
+        //closeWay[1].SetActive(true);
 
         _isStayInCave = false;
 
