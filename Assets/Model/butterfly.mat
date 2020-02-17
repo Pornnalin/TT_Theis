@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: butterfly
-  m_Shader: {fileID: 4800000, guid: d96b37fece431044080e038984b57411, type: 3}
-  m_ShaderKeywords: BOOLEAN_6AD70381_ON
+  m_Shader: {fileID: 4800000, guid: 8f673b997c6260c4db9bd7ab11c03965, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
@@ -48,8 +48,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_4543C27_Out:
+        m_Texture: {fileID: 2800000, guid: d4929f6059e12a44c81b7a6020e9be6d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_5D5944D9_Out:
+        m_Texture: {fileID: 2800000, guid: bf93052f9611c2549aa039955b29cca8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Boolean_6AD70381: 1
+    - Boolean_6AD70381: 0
+    - Vector1_5E7726EB: 0.5
+    - Vector1_72A61398: -0.5
+    - Vector1_C8479D29: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
