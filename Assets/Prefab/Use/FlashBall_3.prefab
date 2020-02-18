@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3021834324845103968}
   - component: {fileID: 646148077841158989}
   m_Layer: 0
-  m_Name: FlashBall_2
+  m_Name: FlashBall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,8 +179,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 247.2
+  m_Color: {r: 0.7924528, g: 0.40628985, b: 0.20558919, a: 1}
+  m_Intensity: 380.6
   m_Range: 41.59
   m_SpotAngle: 37.2
   m_CookieSize: 10
