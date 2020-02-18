@@ -7,43 +7,48 @@ public class FlashBallMove : MonoBehaviour
     //public Transform startPos;
     //public Transform endPos;
 
-    public GameObject flashBall;
+    //public GameObject flashBall;
 
     public float speed;
     //private float startTime;
     //private float journeyLength;
 
-    public bool ispass;
+    //public bool ispass;
     // Start is called before the first frame update
     void Start()
     {
         //    startTime = Time.time;
         //    journeyLength = Vector3.Distance(startPos.position, endPos.position);
+        transform.Translate(-speed * Time.deltaTime, 0, 0);
         //}}
 
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    if (ispass)
+    //    {
+    //        transform.Translate(-speed * Time.deltaTime, 0, 0);
+    //        //float distCovered = (Time.time - startTime) * speed;
+    //        //float fractionOfJoureny = distCovered / journeyLength;
+    //        //transform.position = Vector3.Lerp(startPos.position, endPos.position, fractionOfJoureny);
+    //    }
+    //}
+    public void Update()
     {
-        if (ispass)
-        {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
-            //float distCovered = (Time.time - startTime) * speed;
-            //float fractionOfJoureny = distCovered / journeyLength;
-            //transform.position = Vector3.Lerp(startPos.position, endPos.position, fractionOfJoureny);
-        }
+        transform.Translate(speed * Time.deltaTime, 0, 0);
     }
 
-     void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            ispass = true;
-            
-        }
+    // void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        ispass = true;
 
-    }
+    //    }
+
+    //}
 }
 
     

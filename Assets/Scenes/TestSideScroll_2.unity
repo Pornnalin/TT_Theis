@@ -1124,9 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e4d5f737231e64fb4ca0f47c3aba7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashBall: {fileID: 0}
   speed: 0
-  ispass: 0
 --- !u!65 &352889762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8094,6 +8092,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlashBall
       objectReference: {fileID: 0}
+    - target: {fileID: 4085973498526635823, guid: b3241b55d8d15094b8b113935fb9313c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3241b55d8d15094b8b113935fb9313c, type: 3}
 --- !u!1 &4108699855534447414
@@ -8352,7 +8355,7 @@ PrefabInstance:
     - target: {fileID: 5714861130018833225, guid: 583e7d9d65e76b340b36a9bb8a47e70d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.51
+      value: -9.87
       objectReference: {fileID: 0}
     - target: {fileID: 5714861130018833225, guid: 583e7d9d65e76b340b36a9bb8a47e70d,
         type: 3}
@@ -10578,6 +10581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPointConrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665039598982297071, guid: b267e0800305bd54ca77b8136b23be93,
+        type: 3}
+      propertyPath: lastCheckPos.x
+      value: -9.87
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b267e0800305bd54ca77b8136b23be93, type: 3}
