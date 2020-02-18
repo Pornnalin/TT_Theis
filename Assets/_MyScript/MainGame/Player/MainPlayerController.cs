@@ -76,6 +76,8 @@ public class MainPlayerController : MonoBehaviour
         transform.position = checkPointControl.lastCheckPos;
         sphereCheck.SetActive(false);
 
+        
+
     }
     private void Awake()
     {
@@ -94,7 +96,7 @@ public class MainPlayerController : MonoBehaviour
     {
         Debug.Log("move" + _moveSpeedCurrent);
         Debug.Log("start" + _startMoveSpeed);
-
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1.73f);
         //testTimeline
         //if (eventTimeline.isTimeline)
         //{
