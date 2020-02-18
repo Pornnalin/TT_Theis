@@ -26,7 +26,22 @@ ModelImporter:
     3300002: pCylinder1
     4300000: pCylinder1
     4300002: pCube2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert12
+    second: {fileID: 2100000, guid: a24622b86f2df2c4c9ae1617c0dac37a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert16
+    second: {fileID: 2100000, guid: c60c8f1de9a6fe746804d2eaa924f725, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert17
+    second: {fileID: 2100000, guid: 122ed249e406e444ca46de1c6522051c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

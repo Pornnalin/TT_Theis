@@ -439,7 +439,7 @@ public class MainPlayerController : MonoBehaviour
         
         if (other.gameObject.tag == "Getup")
         {
-            transform.Translate(Vector3.right * 1.5f);
+            transform.Translate(Vector3.right * 0.5f);
             anim.SetBool("IsClimb", false);
             
             Debug.Log("can get up");

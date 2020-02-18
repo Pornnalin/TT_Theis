@@ -12,6 +12,7 @@ public class Interact : MonoBehaviour
     public GameObject texSceond;
     public static Interact _interact;
     public  bool isPressE;
+    public Material switchColor;
     // Start is called before the first frame update
 
     void Start()
@@ -20,7 +21,8 @@ public class Interact : MonoBehaviour
         texSceond.SetActive(false);
 
         isPressE = false;
-       
+        
+
 
     }
 
@@ -46,10 +48,19 @@ public class Interact : MonoBehaviour
             {
                 //StartCoroutine(wait());
                 isPressE = true;
+                
+
+
             }
         }
+        if (isPressE)
+        {
+            gameObject.GetComponent<Renderer>().material = switchColor;
+            this.gameObject.GetComponent<Collider>().enabled = false;
 
-      
+        }
+
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -59,7 +70,7 @@ public class Interact : MonoBehaviour
             Debug.Log("press E");
             texSceond.SetActive(true);
             isShowText = true;
-
+           
         }
     }
 

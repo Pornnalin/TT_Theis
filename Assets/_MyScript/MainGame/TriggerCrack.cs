@@ -8,6 +8,8 @@ public class TriggerCrack : MonoBehaviour
     public GameObject origin;
     public Transform[] potionSpawn;
     public GameObject plummet;
+    public GameObject switchLight;
+    bool isChangeColor;
 
 
     //public Transform postionSpawn;
@@ -24,7 +26,13 @@ public class TriggerCrack : MonoBehaviour
         if ((Interact._interact.isPressE))
         {
             StartCoroutine(waitToFall());
+            //isChangeColor = true;
         }
+
+        //if (isChangeColor)
+        //{
+        //    switchLight.GetComponent<ChangeColor>().BeenHit();
+        //}
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -53,4 +61,6 @@ public class TriggerCrack : MonoBehaviour
         plummet.GetComponent<Rigidbody>().useGravity = true;
         Interact._interact.isPressE = false;
     }
+
+   
 }
