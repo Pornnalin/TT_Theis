@@ -78,8 +78,18 @@ public class SwitchCM : MonoBehaviour
 
                 break;
 
+        }
+        switch (MainPlayerController.instance._isOverview)
+        {
+            case true:
+                currentView = view[2];
+                traitionSpeed = 0.5f;
+                break;
 
-
+            case false:
+                currentView = view[0];
+                traitionSpeed = 2f;
+                break;
 
         }
 

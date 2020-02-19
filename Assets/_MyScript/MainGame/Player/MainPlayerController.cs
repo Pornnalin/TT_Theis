@@ -54,6 +54,7 @@ public class MainPlayerController : MonoBehaviour
 
     [Header("CameraChagne")]
     public bool _isStayInCave;
+    public bool _isOverview;
 
     [Header("Timeline")]
     public EventTimeline eventTimeline;
@@ -439,7 +440,7 @@ public class MainPlayerController : MonoBehaviour
         
         if (other.gameObject.tag == "Getup")
         {
-            transform.Translate(Vector3.right * 0.5f);
+            transform.Translate(Vector3.right * 1.5f);
             anim.SetBool("IsClimb", false);
             
             Debug.Log("can get up");
@@ -463,6 +464,11 @@ public class MainPlayerController : MonoBehaviour
             _isStayInCave = true;
         }
 
+        if (other.gameObject.tag == "TestCamera")
+        {
+            _isOverview = true;
+        }
+
 
     }
 
@@ -477,6 +483,7 @@ public class MainPlayerController : MonoBehaviour
         //closeWay[1].SetActive(true);
 
         _isStayInCave = false;
+        _isOverview = false;
 
 
     }

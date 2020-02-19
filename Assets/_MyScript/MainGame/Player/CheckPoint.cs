@@ -5,9 +5,12 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     private CheckPointControl check;
+    public GameObject cpOn, cpOff;
     // Start is called before the first frame update
     void Start()
     {
+        cpOn.SetActive(false);
+        cpOff.SetActive(true);
         check = GameObject.FindGameObjectWithTag("CPC").GetComponent<CheckPointControl>();
     }
 
@@ -22,6 +25,12 @@ public class CheckPoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             check.lastCheckPos = transform.position;
+            //check.lastCheckPosCamera = transform.position;
+            //check.lastCheckPosCrounded = transform.position;
+
         }
+
+        cpOn.SetActive(true);
+        cpOff.SetActive(false);
     }
 }

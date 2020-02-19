@@ -61,7 +61,22 @@ ModelImporter:
     2300000: polySurface30
     3300000: polySurface30
     4300000: polySurface30
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert10
+    second: {fileID: 2100000, guid: 7927cfb5bd380bd4684511f8c5153f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: ff3aa1769ae0b774fb656b15aef2e248, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 6e6d5e186d90c7f46a7a973c939fb146, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -92,7 +107,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

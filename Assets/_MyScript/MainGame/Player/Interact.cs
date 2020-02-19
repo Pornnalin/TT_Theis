@@ -10,7 +10,7 @@ public class Interact : MonoBehaviour
     //public TextMeshProUGUI _press;
     bool isShowText;
     public GameObject texSceond;
-    public static Interact _interact;
+    //public static Interact _interact;
     public  bool isPressE;
     public Material switchColor;
     // Start is called before the first frame update
@@ -26,19 +26,19 @@ public class Interact : MonoBehaviour
 
     }
 
-    public void Awake()
-    {
-        if (_interact == null)
-        {
-            _interact = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+    //public void Awake()
+    //{
+    //    if (_interact == null)
+    //    {
+    //        _interact = this;
+    //    }
+    //    else
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
 
        
-    }
+    //}
     // Update is called once per frame
     void Update()
     {

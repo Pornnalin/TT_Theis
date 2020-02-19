@@ -9,6 +9,7 @@ public class TriggerCrack : MonoBehaviour
     public Transform[] potionSpawn;
     public GameObject plummet;
     public GameObject switchLight;
+    public Interact interact;
     bool isChangeColor;
 
 
@@ -23,7 +24,7 @@ public class TriggerCrack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Interact._interact.isPressE))
+        if ((interact.isPressE))
         {
             StartCoroutine(waitToFall());
             //isChangeColor = true;
@@ -57,9 +58,9 @@ public class TriggerCrack : MonoBehaviour
 
     IEnumerator waitToFall()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         plummet.GetComponent<Rigidbody>().useGravity = true;
-        Interact._interact.isPressE = false;
+        interact.isPressE = false;
     }
 
    

@@ -17,6 +17,7 @@ TagManager:
   - StayC
   - DeadZone
   - Wood
+  - TestCamera
   layers:
   - Default
   - TransparentFX

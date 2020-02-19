@@ -19,7 +19,8 @@ public class MainCameraFollow : MonoBehaviour
     {
         //Vector3 targetCampos = target.position + offset;
 
-        //transform.position = Vector3.Lerp(transform.position, targetCampos, smoothing * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, targetCampos, smoothing * Time.deltaTime)
+        
     }
 
     private void Update()

@@ -6,6 +6,8 @@ public class CheckPointControl : MonoBehaviour
 {
     public static CheckPointControl checkPointControl;
     public Vector3 lastCheckPos;
+    //public Vector3 lastCheckPosCamera;
+    //public Vector3 lastCheckPosCrounded;
 
     // Start is called before the first frame update
     void Start()
