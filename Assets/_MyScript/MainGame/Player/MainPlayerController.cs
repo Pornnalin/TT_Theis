@@ -468,6 +468,12 @@ public class MainPlayerController : MonoBehaviour
         {
             _isOverview = true;
         }
+        if (other.gameObject.tag == "PowerJump")
+        {
+            jumpForce = 15f;
+            _moveSpeedCurrent = 5f;
+
+        }
 
 
     }
@@ -484,6 +490,9 @@ public class MainPlayerController : MonoBehaviour
 
         _isStayInCave = false;
         _isOverview = false;
+        jumpForce = 12f;
+        _moveSpeedCurrent = _startMoveSpeed;
+
 
 
     }

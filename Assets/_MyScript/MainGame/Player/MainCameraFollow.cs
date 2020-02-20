@@ -8,10 +8,13 @@ public class MainCameraFollow : MonoBehaviour
     public float smoothing = 10f;
     public GameObject player;
      public Vector3 offset;
+
     // Start is called before the first frame update
     void Start()
     {
         offset = transform.position - target.position;
+        //transform.position -= target.position;
+        
     }
 
     // Update is called once per frame

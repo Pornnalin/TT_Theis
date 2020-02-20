@@ -18,7 +18,8 @@ TagManager:
   - DeadZone
   - Wood
   - TestCamera
-  - Jump_ai
+  - SetAi
+  - PowerJump
   layers:
   - Default
   - TransparentFX
