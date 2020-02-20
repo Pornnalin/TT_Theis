@@ -18,6 +18,7 @@ TagManager:
   - DeadZone
   - Wood
   - TestCamera
+  - Jump_ai
   layers:
   - Default
   - TransparentFX

@@ -11,15 +11,19 @@ public class EnemyController : MonoBehaviour
 
 
     public NavMeshAgent agent;
+    public float speedNav;
     public Animator anim;
     public enum AIState
     {
-        isIdle, IsPatrolling
+        isIdle, IsPatrolling,IsFollower
     }
     public AIState currentState;
 
     public float waitAtPoint;
     private float waitCounter;
+
+    public float targetRange;
+    public float rage;
 
 
 
@@ -29,6 +33,8 @@ public class EnemyController : MonoBehaviour
         waitCounter = waitAtPoint;
        
         agent.baseOffset = -0.1f;
+
+        agent.speed = speedNav;
     }
     private void Awake()
     {
@@ -65,7 +71,12 @@ public class EnemyController : MonoBehaviour
                         agent.SetDestination(patrolPoint[currentPatrolPoint].position);
 
                     }
+                    if (distanceToPlayer <= rage)
+                    {
+                        currentState = AIState.IsFollower;
+                        anim.SetBool("IsMoving", true);
 
+                    }
 
                     break;
 
@@ -82,18 +93,27 @@ public class EnemyController : MonoBehaviour
                         currentState = AIState.isIdle;
                         waitCounter = waitAtPoint;
                     }
-
+                    if (distanceToPlayer <= rage)
+                    {
+                        currentState = AIState.IsFollower;
+                    }
 
                     anim.SetBool("IsMoving", true);
                     break;
 
 
+                case AIState.IsFollower:
 
-
-
-
+                    agent.SetDestination(MainPlayerController.instance.transform.position);
+                   
+                    
+                    break;
+               
             }
+            
         }
+
+
         else
         {
             anim.SetBool("IsMoving", false);
@@ -102,5 +122,7 @@ public class EnemyController : MonoBehaviour
 
        
     }
+
+
 }
 
