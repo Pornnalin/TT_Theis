@@ -30,13 +30,17 @@ public class PushItem : MonoBehaviour
                 //MainPlayerController.instance.charController.height = 1.7f;
                 //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
                 //transform.Translate(Vector3.right * Time.deltaTime);
+                MainPlayerController.instance.anim.SetBool("IsPush", true);
+
                 checkRotaion();
 
 
 
             }
             else
+
             {
+               
                 isPush = false;
                 MainPlayerController.instance.anim.SetBool("IsPush", false);
                 MainPlayerController.instance.charController.height = 1.86f;
@@ -87,19 +91,37 @@ public class PushItem : MonoBehaviour
     {
         if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
         {
-            MainPlayerController.instance.anim.SetBool("IsPush", true);
+            //MainPlayerController.instance.anim.SetBool("IsPush", true);
             MainPlayerController.instance.charController.height = 1.7f;
-            //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
-            transform.Translate(Vector3.right * Time.deltaTime);
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right * Time.deltaTime);
+
+            }
+          
+
+            //MainPlayerController.instance.anim.SetBool("IsPush", true);
+            //MainPlayerController.instance.charController.height = 1.7f;
+            ////rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
+            //transform.Translate(Vector3.right * Time.deltaTime);
 
             Debug.Log("0");
         }
         if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
         {
-            MainPlayerController.instance.anim.SetBool("IsPush", true);
+            //MainPlayerController.instance.anim.SetBool("IsPush", true);
             MainPlayerController.instance.charController.height = 1.7f;
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left * Time.deltaTime);
+
+            }
+
+           
             //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
-            transform.Translate(Vector3.left * Time.deltaTime);
+
 
             Debug.Log("180");
         }
