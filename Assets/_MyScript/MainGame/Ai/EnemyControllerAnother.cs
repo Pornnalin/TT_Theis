@@ -14,6 +14,8 @@ public class EnemyControllerAnother : MonoBehaviour
     public float speedNav;
     public Animator anim;
     bool isStop;
+    //public AudioClip walk;
+    public AudioSource audioSource;
     public enum AIState
     {
         /*isIdle, IsPatrolling, */IsFollower,Stop
@@ -37,6 +39,8 @@ public class EnemyControllerAnother : MonoBehaviour
 
         agent.speed = speedNav;
         currentState = AIState.IsFollower;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.5f;
     }
 
 
@@ -96,6 +100,7 @@ public class EnemyControllerAnother : MonoBehaviour
                 case AIState.IsFollower:
 
                     agent.SetDestination(MainPlayerController.instance.transform.position);
+                   
                     anim.SetBool("IsMoving", true);
 
                     if (isStop)
@@ -131,6 +136,18 @@ public class EnemyControllerAnother : MonoBehaviour
         {
             Debug.Log("stay!!");
             isStop = true;
+            StartCoroutine(waitSound());
+
         }
+    }
+
+    IEnumerator waitSound()
+    {
+        yield return new WaitForSeconds(0.1f);
+        audioSource.volume -= 0.5f * Time.deltaTime / 3f;
+        
+        //audioSource.volume = 0.1f;
+        //audioSource.Stop();
+
     }
 }

@@ -21,6 +21,9 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             spawnAi.SetActive(true);
+            SoundManager.soundManager.audioS.volume = 0.3f;
+            SoundManager.soundManager.PlaySound(soundInGame.hit_sound);
+
         }
 
     }
