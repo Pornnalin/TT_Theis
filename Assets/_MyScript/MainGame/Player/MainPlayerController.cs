@@ -126,7 +126,9 @@ public class MainPlayerController : MonoBehaviour
             //jump
             if (charController.isGrounded)
             {
+
                 JumpInput();
+
 
 
             }
@@ -134,9 +136,17 @@ public class MainPlayerController : MonoBehaviour
             {
 
             }
-            //Climb
+            
+            if (Isjump)
+            {
+                _moveSpeedCurrent = 7f;
+            }
+            else
+            {
+                _moveSpeedCurrent = _startMoveSpeed;
 
-           
+            }
+
 
             CrounchedInput();
             if (isCrouched)
@@ -387,7 +397,8 @@ public class MainPlayerController : MonoBehaviour
         {
 
             moveDirection.y = jumpForce;
-            _moveSpeedCurrent = 3;
+            //_moveSpeedCurrent = 7f;
+            _startMoveSpeed = 7f;
             anim.SetBool("Jump", true);
             Isjump = true;
             Debug.Log("Jump");
@@ -396,7 +407,8 @@ public class MainPlayerController : MonoBehaviour
         {
 
             //_moveSpeed = 5;
-            _moveSpeedCurrent = _startMoveSpeed;
+            //_moveSpeedCurrent = _startMoveSpeed;
+            _startMoveSpeed = 4f;
             anim.SetBool("Jump", false);
             Isjump = false;
         }

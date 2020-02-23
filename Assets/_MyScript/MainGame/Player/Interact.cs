@@ -6,7 +6,7 @@ using TMPro;
 
 public class Interact : MonoBehaviour
 {
-    public GameObject texFist;
+    //public GameObject texFist;
     //public TextMeshProUGUI _press;
     bool isShowText;
     public GameObject texSceond;
@@ -17,7 +17,7 @@ public class Interact : MonoBehaviour
 
     void Start()
     {
-        texFist.SetActive(false);
+        //texFist.SetActive(false);
         texSceond.SetActive(false);
 
         isPressE = false;
@@ -57,6 +57,8 @@ public class Interact : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().material = switchColor;
             this.gameObject.GetComponent<Collider>().enabled = false;
+            texSceond.SetActive(false);
+
 
         }
 

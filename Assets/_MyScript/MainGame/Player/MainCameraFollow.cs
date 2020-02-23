@@ -6,7 +6,7 @@ public class MainCameraFollow : MonoBehaviour
 {
     public Transform target;
     public float smoothing = 10f;
-    public GameObject player;
+    //public GameObject player;
      public Vector3 offset;
 
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class MainCameraFollow : MonoBehaviour
     {
         offset = transform.position - target.position;
         //transform.position -= target.position;
-        
+
     }
 
     // Update is called once per frame
