@@ -19,9 +19,9 @@ TagManager:
   - Wood
   - TestCamera
   - SetAi
-  - PowerJump
   - ChangeSpeed
   - Slow
+  - FloorGlass
   layers:
   - Default
   - TransparentFX

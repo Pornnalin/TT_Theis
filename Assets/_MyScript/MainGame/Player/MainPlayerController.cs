@@ -77,7 +77,7 @@ public class MainPlayerController : MonoBehaviour
         transform.position = checkPointControl.lastCheckPos;
         sphereCheck.SetActive(false);
         Time.timeScale = 1f;
-        
+        anim.speed = 1f;
 
     }
     private void Awake()
@@ -493,7 +493,7 @@ public class MainPlayerController : MonoBehaviour
         if (other.gameObject.tag == "ChangeSpeed")
         {
 
-            jumpForce = 17f;
+            jumpForce = 16f;
             _moveSpeedCurrent = 6f;
             anim.speed = 1.1f;
             Debug.Log("1.5f");
@@ -520,6 +520,7 @@ public class MainPlayerController : MonoBehaviour
         _moveSpeedCurrent = _startMoveSpeed;
 
         Time.timeScale = 1f;
+        anim.speed = 1f;
 
 
     }

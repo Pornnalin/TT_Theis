@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager soundManager;
     [HideInInspector]
     public AudioSource audioS;
-    public AudioClip em,cd,hit,footStep;
+    public AudioClip em,cd,hit,footStep,glassBreak;
 
 
     
@@ -59,6 +59,10 @@ public class SoundManager : MonoBehaviour
                 //audioS.volume = 1f;
                 audioS.PlayOneShot(footStep);
                 break;
+            case soundInGame.glass_sound:
+                //audioS.volume = 1f;
+                audioS.PlayOneShot(glassBreak);
+                break;
         }
     }
 
@@ -70,7 +74,7 @@ public class SoundManager : MonoBehaviour
 
 public enum soundInGame
 {
-    em_sound,countDown_sound,hit_sound,footStep_sound
+    em_sound,countDown_sound,hit_sound,footStep_sound,glass_sound
 }
 
 

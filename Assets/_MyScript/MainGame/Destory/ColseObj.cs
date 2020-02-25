@@ -15,4 +15,8 @@ public class ColseObj : MonoBehaviour
     {
         
     }
+    public void OnTriggerExit(Collider other)
+    {
+        gameObject.GetComponent<Collider>().enabled = false;
+    }
 }

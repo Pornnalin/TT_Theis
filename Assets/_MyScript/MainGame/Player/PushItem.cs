@@ -65,9 +65,16 @@ public class PushItem : MonoBehaviour
         //    Debug.Log("GetButtonDownA");
         //}
     }
-   
 
-    
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("FloorGlass"))
+        {
+            SoundManager.soundManager.audioS.volume = 1f;
+            SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
+        }
+    }
+
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

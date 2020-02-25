@@ -24,4 +24,10 @@ public class DestoryAi : MonoBehaviour
             Destroy(targetDestory);
         }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        //BoxCollider box = GetComponent(typeof(BoxCollider)) as BoxCollider;
+        //box.isTrigger = false;
+    }
 }
