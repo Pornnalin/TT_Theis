@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Red
+  m_Name: Red_em
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 2
@@ -91,8 +91,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
-    - _Color: {r: 0.8301887, g: 0.67763305, b: 0.05090782, a: 1}
-    - _EmissionColor: {r: 1.2156863, g: 0.14117648, b: 0.14117648, a: 1}
+    - _Color: {r: 0.19012304, g: 0.1724813, b: 0.6415094, a: 1}
+    - _EmissionColor: {r: 0.11921501, g: 0.1432418, b: 0.5377358, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
 --- !u!114 &8311173078766884241
 MonoBehaviour:

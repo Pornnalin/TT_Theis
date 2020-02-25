@@ -10,6 +10,7 @@ public class TriggerCrack : MonoBehaviour
     public GameObject plummet;
     public GameObject switchLight;
     public Interact interact;
+    public Animator plumAnim;
     bool isChangeColor;
 
 
@@ -58,7 +59,11 @@ public class TriggerCrack : MonoBehaviour
 
     IEnumerator waitToFall()
     {
+        plumAnim.SetBool("Fall", true);
+      
         yield return new WaitForSeconds(3f);
+        plumAnim.enabled = false;
+        //plumAnim.SetBool("Fall", true);
         plummet.GetComponent<Rigidbody>().useGravity = true;
         interact.isPressE = false;
     }

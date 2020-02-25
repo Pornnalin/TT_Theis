@@ -41,14 +41,7 @@ public class AiFindPlayer : MonoBehaviour
             { 
                 if (hitInfo.collider.CompareTag("Player"))
                 {
-                    //foreach(Transform t in postitionRay)
-                    //{
-                    //    t.gameObject.SetActive(false);
-                    //    this.gameObject.SetActive(true);
-                    //    Debug.Log("CloseRaycast");
-                    //}
-                    //StartCoroutine(WaitForTurnOff());
-                    //SpawnParticle();
+                   
                     GameManager._GameManager.SoundFound();
                     MainPlayerController.instance.anim.SetBool("IsDead", true);
                     Debug.Log(hitInfo.collider.gameObject.name);

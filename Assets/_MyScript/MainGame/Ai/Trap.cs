@@ -27,4 +27,9 @@ public class Trap : MonoBehaviour
         }
 
     }
+    public void OnTriggerExit(Collider other)
+    {
+        this.gameObject.SetActive(false);
+    }
+
 }

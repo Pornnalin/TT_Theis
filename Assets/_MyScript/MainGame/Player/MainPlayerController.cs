@@ -76,7 +76,7 @@ public class MainPlayerController : MonoBehaviour
         checkPointControl = GameObject.FindGameObjectWithTag("CPC").GetComponent<CheckPointControl>();
         transform.position = checkPointControl.lastCheckPos;
         sphereCheck.SetActive(false);
-
+        Time.timeScale = 1f;
         
 
     }
@@ -399,6 +399,7 @@ public class MainPlayerController : MonoBehaviour
             moveDirection.y = jumpForce;
             //_moveSpeedCurrent = 7f;
             _startMoveSpeed = 7f;
+            //gravityScale = 2f;
             anim.SetBool("Jump", true);
             Isjump = true;
             Debug.Log("Jump");
@@ -409,6 +410,7 @@ public class MainPlayerController : MonoBehaviour
             //_moveSpeed = 5;
             //_moveSpeedCurrent = _startMoveSpeed;
             _startMoveSpeed = 4f;
+            //gravityScale = 3f;
             anim.SetBool("Jump", false);
             Isjump = false;
         }
@@ -480,12 +482,24 @@ public class MainPlayerController : MonoBehaviour
         {
             _isOverview = true;
         }
-        if (other.gameObject.tag == "PowerJump")
+        if (other.gameObject.tag == "Slow")
         {
-            jumpForce = 15f;
-            _moveSpeedCurrent = 5f;
+            //jumpForce = 16f;
+            //_moveSpeedCurrent = 7f;
+
+            Time.timeScale = 0.4f;
 
         }
+        if (other.gameObject.tag == "ChangeSpeed")
+        {
+
+            jumpForce = 17f;
+            _moveSpeedCurrent = 6f;
+            anim.speed = 1.1f;
+            Debug.Log("1.5f");
+
+        }
+        
 
 
     }
@@ -505,6 +519,7 @@ public class MainPlayerController : MonoBehaviour
         jumpForce = 12f;
         _moveSpeedCurrent = _startMoveSpeed;
 
+        Time.timeScale = 1f;
 
 
     }

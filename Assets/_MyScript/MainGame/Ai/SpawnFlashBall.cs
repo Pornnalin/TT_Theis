@@ -13,6 +13,7 @@ public class SpawnFlashBall : MonoBehaviour
     void Start()
     {
        
+
     }
 
     // Update is called once per frame
@@ -23,9 +24,10 @@ public class SpawnFlashBall : MonoBehaviour
             Rigidbody rigi;
             rigi = Instantiate(pefabFlash, postionSpawn.position, postionSpawn.rotation) as Rigidbody;
             isSpawn = false;
+          
         }
+   
 
-       
     }
 
     private void OnTriggerEnter(Collider other)

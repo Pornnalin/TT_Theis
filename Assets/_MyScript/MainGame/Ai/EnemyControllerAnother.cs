@@ -137,7 +137,8 @@ public class EnemyControllerAnother : MonoBehaviour
         {
             Debug.Log("stay!!");
             isStop = true;
-            StartCoroutine(waitSound());
+            audioSource.volume = 0f;
+            //StartCoroutine(waitSound());
 
         }
     }
