@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
     {
         if (GameManager.IsInputEnabled)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, MainPlayerController.instance.transform.position);
+            //float distanceToPlayer = Vector3.Distance(transform.position, MainPlayerController.instance.transform.position);
             //Debug.Log(distanceToPlayer + "position");
             switch (currentState)
             {
