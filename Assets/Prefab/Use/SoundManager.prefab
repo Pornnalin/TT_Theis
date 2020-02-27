@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3033762661273136116}
   - component: {fileID: 3033762661273136119}
   - component: {fileID: 3033762661273136118}
-  - component: {fileID: 3033762661273136117}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -47,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioS: {fileID: 0}
   em: {fileID: 8300000, guid: ef011084ef729e2429d1eb9c17ff1306, type: 3}
+  cd: {fileID: 0}
+  hit: {fileID: 0}
+  footStep: {fileID: 0}
+  glassBreak: {fileID: 0}
 --- !u!82 &3033762661273136118
 AudioSource:
   m_ObjectHideFlags: 0
@@ -143,11 +146,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &3033762661273136117
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3033762661273136121}
-  m_Enabled: 1

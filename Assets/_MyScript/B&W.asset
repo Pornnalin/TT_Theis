@@ -146,7 +146,7 @@ MonoBehaviour:
     value: 3
   mixerRedOutRedIn:
     overrideState: 1
-    value: 16
+    value: 5
   mixerRedOutGreenIn:
     overrideState: 1
     value: 7
@@ -161,25 +161,25 @@ MonoBehaviour:
     value: -5
   mixerGreenOutBlueIn:
     overrideState: 1
-    value: -2
+    value: -8
   mixerBlueOutRedIn:
     overrideState: 1
-    value: -28
+    value: -45
   mixerBlueOutGreenIn:
     overrideState: 1
-    value: 2
+    value: -56
   mixerBlueOutBlueIn:
     overrideState: 1
-    value: -7
+    value: -32
   lift:
     overrideState: 1
-    value: {x: 0.9844893, y: 1, z: 0.5645941, w: 0}
+    value: {x: 1, y: 0.43700433, z: 0.9769097, w: 0}
   gamma:
     overrideState: 0
-    value: {x: 0.9893776, y: 0.7014235, z: 1, w: 0.06593407}
+    value: {x: 0.5592151, y: 0.577075, z: 1, w: 0.06593407}
   gain:
     overrideState: 0
-    value: {x: 0.29877043, y: 0.97542214, z: 1, w: -0.06593407}
+    value: {x: 0.49837625, y: 1, z: 0.8935628, w: -0.06593407}
   masterCurve:
     overrideState: 0
     value:
@@ -973,7 +973,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.002624672
+          time: 0.0001
           value: 1
           inSlope: 0
           outSlope: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.05511811
+          time: 0.16307692
           value: 0
           inSlope: 0
           outSlope: 0
@@ -1007,26 +1007,26 @@ MonoBehaviour:
       m_Range: 1
       cachedData:
       - 0
-      - 0.9726295
-      - 0.84637845
-      - 0.65305495
-      - 0.4322173
-      - 0.2234236
-      - 0.066231966
-      - 0.00020068884
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - 0.9934937
+      - 0.974506
+      - 0.9443579
+      - 0.9043709
+      - 0.8558671
+      - 0.80016816
+      - 0.73859584
+      - 0.6724722
+      - 0.6031189
+      - 0.53185767
+      - 0.46001053
+      - 0.3888992
+      - 0.31984556
+      - 0.2541713
+      - 0.19319844
+      - 0.13824862
+      - 0.09064382
+      - 0.05170566
+      - 0.022756219
+      - 0.005116999
       - 0
       - 0
       - 0
