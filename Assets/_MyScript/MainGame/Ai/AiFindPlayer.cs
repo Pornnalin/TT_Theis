@@ -7,6 +7,7 @@ public class AiFindPlayer : MonoBehaviour
     //public float rotationSpeed;
     //public Number number;
     public float distance;
+    public EnemyController enemyController;
     //public float[] test;
     private bool spawnCase = false;
     private bool findTarget;
@@ -23,7 +24,7 @@ public class AiFindPlayer : MonoBehaviour
     {
         findTarget = true;
         //test = number._distane;
-       
+        //enemyController = GetComponent<EnemyController>();
         
     }
 
@@ -74,8 +75,10 @@ public class AiFindPlayer : MonoBehaviour
             {
                 //StartCoroutine(SpawnCase());
               
-                EnemyController.enemyController.currentState = EnemyController.AIState.isIdle;
-                EnemyController.enemyController.anim.speed = 0f;
+                //EnemyController.enemyController.currentState = EnemyController.AIState.isIdle;
+                enemyController.currentState = EnemyController.AIState.isIdle;
+                //EnemyController.enemyController.anim.speed = 0f;
+                enemyController.anim.speed = 0f;
                 GameManager._GameManager.SpawnCase();
                 distance = 0f;
                 spawnCase = false;

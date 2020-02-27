@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public static EnemyController enemyController;
+    //public static EnemyController enemyController;
     public Transform[] patrolPoint;
     public int currentPatrolPoint;
 
@@ -36,18 +36,18 @@ public class EnemyController : MonoBehaviour
 
         //agent.speed = speedNav;
     }
-    private void Awake()
-    {
-        if (enemyController == null)
-        {
-            enemyController = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+    //private void Awake()
+    //{
+    //    if (enemyController == null)
+    //    {
+    //        enemyController = this;
+    //    }
+    //    else
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
 
-    }
+    //}
 
     // Update is called once per frame
     void Update()
