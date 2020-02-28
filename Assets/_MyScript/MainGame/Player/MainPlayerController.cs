@@ -398,7 +398,7 @@ public class MainPlayerController : MonoBehaviour
 
             moveDirection.y = jumpForce;
             //_moveSpeedCurrent = 7f;
-            _startMoveSpeed = 6f;
+            _startMoveSpeed = 5f;
             //gravityScale = 2f;
             anim.SetBool("Jump", true);
             Isjump = true;

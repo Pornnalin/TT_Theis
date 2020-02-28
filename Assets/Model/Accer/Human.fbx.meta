@@ -33,7 +33,17 @@ ModelImporter:
     3300002: polySurface5
     4300000: polySurface5
     4300002: polySurface18
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 7cfc63bc75e51a742aeadc72799454be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 9b41294431f3cee4cb6dc03f4c43f72d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +74,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

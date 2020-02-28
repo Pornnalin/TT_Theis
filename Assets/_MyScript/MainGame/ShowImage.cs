@@ -15,11 +15,11 @@ public class ShowImage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isStay)
-        {
-            StartCoroutine(waitForSound());
-            isStay = false;
-        }
+        //if (isStay)
+        //{
+        //    StartCoroutine(waitForSound());
+        //    isStay = false;
+        //}
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -35,7 +35,8 @@ public class ShowImage : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         imageRed.gameObject.SetActive(false);
-
+        //isStay = false;
+        //gameObject.GetComponent<Collider>().enabled = false;
     }
     IEnumerator waitForSound()
     {
