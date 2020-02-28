@@ -59,7 +59,8 @@ public class GameManager : MonoBehaviour
         //    SceneManager.LoadScene("TestCameraFollow2");
         //}
     }
-
+   
+    /// 
     public void SpawnCase()
     {
         StartCoroutine(WaitSpawnCase());
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    ///
     public void SoundFound()
     {
         StartCoroutine(WaitForTurnOff());
@@ -86,9 +87,22 @@ public class GameManager : MonoBehaviour
         SoundManager.soundManager.audioS.volume = 0f;
         TrasitionScene.Trasition.EndGame();
 
+    }
+    ///
+    public void SoundEle()
+    {
+        StartCoroutine(WaitForTurnOffEle());
+    }
+    IEnumerator WaitForTurnOffEle()
+    {
+        //anim.speed = 0;
+        //Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
 
-
-
+        SoundManager.soundManager.audioS.volume = 0.3f;
+        SoundManager.soundManager.PlaySound(soundInGame.eletric_sound);
+        yield return new WaitForSeconds(3f);
+        SoundManager.soundManager.audioS.volume = 0f;
+        TrasitionScene.Trasition.EndGame();
 
     }
 

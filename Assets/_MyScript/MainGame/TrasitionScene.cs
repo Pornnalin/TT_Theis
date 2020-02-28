@@ -49,8 +49,9 @@ public class TrasitionScene : MonoBehaviour
         //endGameTxt.enabled = true;
        
         anim.SetTrigger("End");
-        LoadSceneCurrent();
+        //LoadSceneCurrent();
         yield return new WaitForSeconds(1.5f);
+        LoadSceneCurrent();
         //endGameTxt.enabled = false;
     }
 
@@ -74,9 +75,11 @@ public class TrasitionScene : MonoBehaviour
     IEnumerator WaitLoadNextScene()
     {
         anim.SetTrigger("End");
-        LoadSceneNext();
+        //anim.SetBool("EndGame", true);
+        //LoadSceneNext();
         yield return new WaitForSeconds(1.5f);
-       
+        LoadSceneNext();
+
     }
 
     

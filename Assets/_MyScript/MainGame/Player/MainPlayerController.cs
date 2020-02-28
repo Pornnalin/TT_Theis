@@ -376,8 +376,11 @@ public class MainPlayerController : MonoBehaviour
                 isStartCrouched = false;
                 anim.SetBool("IsStartCrouched", false);
             }
-            
-            
+            num = 0;
+            isCrouched = false;
+            isStartCrouched = false;
+            anim.SetBool("IsStartCrouched", false);
+
 
         }
         else

@@ -38,7 +38,7 @@ MonoBehaviour:
     value: 1
   mode:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
     overrideState: 1
     value: 1.82
@@ -155,7 +155,7 @@ MonoBehaviour:
     value: -0
   mixerGreenOutRedIn:
     overrideState: 1
-    value: 2
+    value: -4
   mixerGreenOutGreenIn:
     overrideState: 1
     value: -5
@@ -173,10 +173,10 @@ MonoBehaviour:
     value: -32
   lift:
     overrideState: 1
-    value: {x: 1, y: 0.43700433, z: 0.9769097, w: 0}
+    value: {x: 1, y: 0.62773764, z: 0.99102515, w: 0}
   gamma:
     overrideState: 0
-    value: {x: 0.5592151, y: 0.577075, z: 1, w: 0.06593407}
+    value: {x: 0.37907273, y: 0.6811281, z: 1, w: 0.06593407}
   gain:
     overrideState: 0
     value: {x: 0.49837625, y: 1, z: 0.8935628, w: -0.06593407}
