@@ -204,7 +204,8 @@ public class MainPlayerController : MonoBehaviour
 
             //rotation
             //RotationChar();
-            transform.right = Vector3.Slerp(transform.right, Vector3.right * Input.GetAxis("Horizontal"), 0.1f);
+
+            transform.right = Vector3.Slerp(transform.right, Vector3.right * Input.GetAxis("Horizontal"), 0.3f);
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
 

@@ -23,7 +23,10 @@ public class UiManager : MonoBehaviour
         Debug.Log("Quit");
     }
 
-
+    public void OnTriggerEnter(Collider other)
+    {
+        LoadNextLevel();
+    }
 
 }
 
