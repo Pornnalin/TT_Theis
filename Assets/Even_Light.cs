@@ -22,7 +22,7 @@ public class Even_Light : MonoBehaviour
         {
             scen_1.SetActive(true);
             gameObject.GetComponent<Collider>().enabled = false;
-            SoundManager.soundManager.audioS.volume = 0.3f;
+            SoundManager.soundManager.audioS.volume = 1f;
             SoundManager.soundManager.PlaySound(soundInGame.hit_sound);
            
         }
