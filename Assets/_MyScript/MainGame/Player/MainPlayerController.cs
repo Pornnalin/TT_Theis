@@ -377,10 +377,10 @@ public class MainPlayerController : MonoBehaviour
                 isStartCrouched = false;
                 anim.SetBool("IsStartCrouched", false);
             }
-            num = 0;
-            isCrouched = false;
-            isStartCrouched = false;
-            anim.SetBool("IsStartCrouched", false);
+            //num = 0;
+            //isCrouched = false;
+            //isStartCrouched = false;
+            //anim.SetBool("IsStartCrouched", false);
 
 
         }
@@ -496,10 +496,10 @@ public class MainPlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "ChangeSpeed")
         {
-
+            anim.SetBool("IsSprint", true);
             jumpForce = 16f;
-            _moveSpeedCurrent = 6f;
-            anim.speed = 1.1f;
+            _moveSpeedCurrent = 7f;
+            //anim.speed = 1.1f;
             Debug.Log("1.5f");
 
         }
@@ -525,7 +525,7 @@ public class MainPlayerController : MonoBehaviour
 
         Time.timeScale = 1f;
         anim.speed = 1f;
-
+        anim.SetBool("IsSprint", false);
 
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)

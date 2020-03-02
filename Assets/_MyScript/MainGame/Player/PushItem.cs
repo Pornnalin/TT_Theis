@@ -33,8 +33,12 @@ public class PushItem : MonoBehaviour
                 //transform.Translate(Vector3.right * Time.deltaTime);
                 if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
                 {
+                    MainPlayerController.instance.anim.speed = 0f;
+
                     if (Input.GetKey(KeyCode.D))
                     {
+                       
+                        MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
                         transform.Translate(Vector3.right * Time.deltaTime);
                         MainPlayerController.instance.charController.height = 1.7f;
@@ -45,8 +49,12 @@ public class PushItem : MonoBehaviour
 
                else if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
                 {
+                    MainPlayerController.instance.anim.speed = 0f;
+
                     if (Input.GetKey(KeyCode.A))
                     {
+                       
+                        MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
                         transform.Translate(Vector3.left * Time.deltaTime);
                         MainPlayerController.instance.charController.height = 1.7f;
@@ -59,6 +67,7 @@ public class PushItem : MonoBehaviour
                 }
             }
         }
+       
     }
    
    

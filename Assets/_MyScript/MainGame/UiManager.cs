@@ -25,7 +25,11 @@ public class UiManager : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        LoadNextLevel();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            LoadNextLevel();
+        }
+        
     }
 
 }
