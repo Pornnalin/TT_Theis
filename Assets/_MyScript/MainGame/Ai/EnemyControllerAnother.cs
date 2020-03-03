@@ -36,7 +36,7 @@ public class EnemyControllerAnother : MonoBehaviour
         //waitCounter = waitAtPoint;
 
         agent.baseOffset = -0.1f;
-
+        speedNav = 10.2f;
         agent.speed = speedNav;
         currentState = AIState.IsFollower;
         audioSource = GetComponent<AudioSource>();

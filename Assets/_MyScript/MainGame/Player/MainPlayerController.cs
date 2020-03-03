@@ -78,7 +78,7 @@ public class MainPlayerController : MonoBehaviour
         sphereCheck.SetActive(false);
         Time.timeScale = 1f;
         anim.speed = 1f;
-
+        isChagneSpeed = false;
     }
     private void Awake()
     {
@@ -147,14 +147,16 @@ public class MainPlayerController : MonoBehaviour
 
             }
 
+           
 
             CrounchedInput();
             if (isCrouched)
             {
-
+                
                 _moveSpeedCurrent = 1f;
                 if(Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D))
                 {
+
                     sphereCheck.SetActive(true);
                     Debug.Log("danger");
                 }
@@ -196,6 +198,14 @@ public class MainPlayerController : MonoBehaviour
                 cc.height = 1.86f;
                 //cc.center = new Vector3(0, 0.96f, 0);
                 charController.center = _centerCharacter;
+                if (isChagneSpeed)
+                {
+                    _moveSpeedCurrent = 7.5f;
+                }
+                else
+                {
+                    _moveSpeedCurrent = _startMoveSpeed;
+                }
             }
 
             //CheckCeilie();
@@ -219,7 +229,7 @@ public class MainPlayerController : MonoBehaviour
 
             //CheckGround();
             //CheckBox();
-
+           
 
 
         }
@@ -227,6 +237,7 @@ public class MainPlayerController : MonoBehaviour
         
         
     }
+    bool isChagneSpeed;
     public void FixedUpdate()
     {
         if (GameManager.IsInputEnabled)
@@ -328,6 +339,7 @@ public class MainPlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.C) && !Isjump)
         {
+            isChagneSpeed = false;
             Debug.Log("num = " + num);
             Debug.Log("crouched");
             isStartCrouched = true;
@@ -494,11 +506,12 @@ public class MainPlayerController : MonoBehaviour
             Time.timeScale = 0.4f;
 
         }
+       
         if (other.gameObject.tag == "ChangeSpeed")
         {
+            isChagneSpeed = true;
             anim.SetBool("IsSprint", true);
             jumpForce = 16f;
-            _moveSpeedCurrent = 7f;
             //anim.speed = 1.1f;
             Debug.Log("1.5f");
 
@@ -526,6 +539,7 @@ public class MainPlayerController : MonoBehaviour
         Time.timeScale = 1f;
         anim.speed = 1f;
         anim.SetBool("IsSprint", false);
+        isChagneSpeed = false;
 
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)
