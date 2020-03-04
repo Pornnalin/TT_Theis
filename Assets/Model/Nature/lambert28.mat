@@ -66,8 +66,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_55CCB245: {r: 0.31556696, g: 0.6981132, b: 0.16794226, a: 0}
-    - Color_F2FF0828: {r: 0.910393, g: 1, b: 0, a: 0}
+    - Color_55CCB245: {r: 0.69803923, g: 0.4374413, b: 0.16862746, a: 0}
+    - Color_F2FF0828: {r: 1, g: 0.6221461, b: 0, a: 0}
     - Vector2_E594435C: {r: -0.2, g: -0.1, b: 0, a: 0}
     - _Color: {r: 0.3224, g: 0.6649, b: 0.0777, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
