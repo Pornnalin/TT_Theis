@@ -51,6 +51,7 @@ public class MainPlayerController : MonoBehaviour
     private Vector3 moveDirection_C;
     public bool Isjump = false;
     public Vector3 _centerCharacter;
+    public bool isShake;
 
     [Header("CameraChagne")]
     public bool _isStayInCave;
@@ -475,9 +476,9 @@ public class MainPlayerController : MonoBehaviour
             
             Debug.Log("can get up");
         }
-
+       
     }
-
+    
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Ladder")
@@ -516,8 +517,13 @@ public class MainPlayerController : MonoBehaviour
             Debug.Log("1.5f");
 
         }
-        
 
+
+        if (other.gameObject.tag == "CameraShake")
+        {
+            isShake = true;
+
+        }
 
     }
 
@@ -540,7 +546,7 @@ public class MainPlayerController : MonoBehaviour
         anim.speed = 1f;
         anim.SetBool("IsSprint", false);
         isChagneSpeed = false;
-
+        isShake = false;
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {

@@ -9,6 +9,7 @@ public class SwitchCM : MonoBehaviour
     public Transform[] view;
     public float traitionSpeed;
     public Transform currentView;
+    public CameraShake cameraShake;
     //public CheckTiggerCamera checkTigger;
 
 
@@ -79,6 +80,20 @@ public class SwitchCM : MonoBehaviour
                 break;
 
         }
+
+        //switch (cameraShake.isShake)
+        //{
+        //    case true:
+        //        currentView = view[2];
+
+        //        break;
+
+        //    case false:
+        //        currentView = view[0];
+
+        //        break;
+
+        //}
         //switch (MainPlayerController.instance._isOverview)
         //{
         //    case true:
