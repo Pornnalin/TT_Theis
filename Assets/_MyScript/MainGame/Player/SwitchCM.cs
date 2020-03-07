@@ -81,19 +81,7 @@ public class SwitchCM : MonoBehaviour
 
         }
 
-        //switch (cameraShake.isShake)
-        //{
-        //    case true:
-        //        currentView = view[2];
-
-        //        break;
-
-        //    case false:
-        //        currentView = view[0];
-
-        //        break;
-
-        //}
+       
         //switch (MainPlayerController.instance._isOverview)
         //{
         //    case true:

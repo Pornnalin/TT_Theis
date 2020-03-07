@@ -51,7 +51,11 @@ public class MainPlayerController : MonoBehaviour
     private Vector3 moveDirection_C;
     public bool Isjump = false;
     public Vector3 _centerCharacter;
+
+    [Header("Camera")]
     public bool isShake;
+   
+    
 
     [Header("CameraChagne")]
     public bool _isStayInCave;
@@ -525,6 +529,8 @@ public class MainPlayerController : MonoBehaviour
 
         }
 
+        
+
     }
 
     public void OnTriggerExit(Collider other)
@@ -547,6 +553,7 @@ public class MainPlayerController : MonoBehaviour
         anim.SetBool("IsSprint", false);
         isChagneSpeed = false;
         isShake = false;
+      
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {

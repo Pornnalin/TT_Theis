@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: water
-  m_Shader: {fileID: 4800000, guid: 82536f77459b5854eaec0fa6e87287b0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,12 +55,16 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _ReceiveShadows: 1
+    - _SampleGI: 0
+    - _Shininess: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -69,6 +73,6 @@ Material:
     m_Colors:
     - Color_2EF9E086: {r: 0.3247597, g: 1.152958, b: 1.679245, a: 0}
     - Color_D3F93EC7: {r: 0.24313715, g: 0.4684037, b: 0.7647059, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.6852527, g: 0.7722233, b: 0.8207547, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 0.5779832, g: 0.6792453, b: 0.27233893, a: 1}

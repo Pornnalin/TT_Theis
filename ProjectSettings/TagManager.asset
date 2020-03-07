@@ -23,6 +23,7 @@ TagManager:
   - Slow
   - FloorGlass
   - CameraShake
+  - ZoomOut
   layers:
   - Default
   - TransparentFX
