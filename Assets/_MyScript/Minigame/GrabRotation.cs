@@ -20,7 +20,20 @@ public class GrabRotation : MonoBehaviour
         originalRotation = transform.rotation.eulerAngles;
         time = count;
     }
-    //void OnMouseDrag()
+    void OnMouseDrag()
+    {
+        XaxisRotaion = Input.GetAxis("Mouse X") * speedRotation;
+        YaxisRotaion = Input.GetAxis("Mouse Y") * speedRotation;
+
+        //Vector3 XaxisRotaion = new Vector3(Input.GetAxis("Mouse X") * speedRotation, 0, 0);
+
+        transform.Rotate(Vector3.right, YaxisRotaion);
+        transform.Rotate(Vector3.down, XaxisRotaion);
+        //transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime * -1, XaxisRotaion);
+    }
+
+    ////}
+    //    public void OnMouseEnter()
     //{
     //    XaxisRotaion = Input.GetAxis("Mouse X") * speedRotation;
     //    YaxisRotaion = Input.GetAxis("Mouse Y") * speedRotation;
@@ -29,27 +42,14 @@ public class GrabRotation : MonoBehaviour
 
     //    //transform.Rotate(Vector3.right, YaxisRotaion);
     //    //transform.Rotate(Vector3.down, XaxisRotaion);
-    //    transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime * -1 ,XaxisRotaion);
-
-
-    ////}
-    public void OnMouseEnter()
-    {
-        XaxisRotaion = Input.GetAxis("Mouse X") * speedRotation;
-        YaxisRotaion = Input.GetAxis("Mouse Y") * speedRotation;
-
-        //Vector3 XaxisRotaion = new Vector3(Input.GetAxis("Mouse X") * speedRotation, 0, 0);
-
-        //transform.Rotate(Vector3.right, YaxisRotaion);
-        //transform.Rotate(Vector3.down, XaxisRotaion);
-        Quaternion rotationAmount = Quaternion.Euler(0, 0, 90);
-        Quaternion postRotation = transform.rotation * rotationAmount;
-        transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime, 90);
+    //    Quaternion rotationAmount = Quaternion.Euler(0, 0, 90);
+    //    Quaternion postRotation = transform.rotation * rotationAmount;
+    //    transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime, 90);
 
 
 
 
-    }
+    //}
 
     //public void OnMouseDown()
     //{
@@ -60,8 +60,8 @@ public class GrabRotation : MonoBehaviour
 
     //    //transform.Rotate(Vector3.right, YaxisRotaion);
     //    //transform.Rotate(Vector3.down, XaxisRotaion);
-    //    transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime, 90);
-
+    //    transform.RotateAround(transform.position, new Vector3(0, 0, 1) * Time.deltaTime, 90);
+    //}
 
     //}
     public void Update()
@@ -76,7 +76,7 @@ public class GrabRotation : MonoBehaviour
         //transform.eulerAngles = new Vector3(originalRotation.x, originalRotation.y, 0);
         //Debug.Log("Original");
 
-        StartCoroutine(wait());
+        //StartCoroutine(wait());
      
     }
 
