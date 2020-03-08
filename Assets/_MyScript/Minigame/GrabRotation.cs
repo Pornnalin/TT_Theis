@@ -27,9 +27,9 @@ public class GrabRotation : MonoBehaviour
 
     //    //Vector3 XaxisRotaion = new Vector3(Input.GetAxis("Mouse X") * speedRotation, 0, 0);
 
-    //    transform.Rotate(Vector3.right, YaxisRotaion);
+    //    //transform.Rotate(Vector3.right, YaxisRotaion);
     //    //transform.Rotate(Vector3.down, XaxisRotaion);
-    //    //transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime * -1, XaxisRotaion);
+    //    transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime * -1, XaxisRotaion);
     //}
 
     ////}
@@ -60,7 +60,7 @@ public class GrabRotation : MonoBehaviour
 
         //transform.Rotate(Vector3.right, YaxisRotaion);
         //transform.Rotate(Vector3.down, XaxisRotaion);
-        transform.RotateAround(transform.position, new Vector3(0, 0, 1) * Time.deltaTime, 90);
+        transform.RotateAround(transform.position, new Vector3(0, 1, 0) * Time.deltaTime, 90);
     }
 
 

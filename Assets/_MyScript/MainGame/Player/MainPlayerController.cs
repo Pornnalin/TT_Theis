@@ -54,8 +54,9 @@ public class MainPlayerController : MonoBehaviour
 
     [Header("Camera")]
     public bool isShake;
-   
-    
+    public bool isZoomOut;
+    public Camera cameraZoomOut;
+    //public GameObject cameraZoomOut;
 
     [Header("CameraChagne")]
     public bool _isStayInCave;
@@ -84,6 +85,8 @@ public class MainPlayerController : MonoBehaviour
         Time.timeScale = 1f;
         anim.speed = 1f;
         isChagneSpeed = false;
+        cameraZoomOut.GetComponent<Camera>().enabled = false;
+        //cameraZoomOut.SetActive(false);
     }
     private void Awake()
     {
@@ -363,7 +366,7 @@ public class MainPlayerController : MonoBehaviour
 
         }
 
-        if (num >= 2)
+        if (num == 2)
         {
 
             //num = 0;
@@ -394,18 +397,18 @@ public class MainPlayerController : MonoBehaviour
                 isStartCrouched = false;
                 anim.SetBool("IsStartCrouched", false);
             }
-            //num = 0;
-            //isCrouched = false;
-            //isStartCrouched = false;
-            //anim.SetBool("IsStartCrouched", false);
+            num = 0;
+            isCrouched = false;
+            isStartCrouched = false;
+            anim.SetBool("IsStartCrouched", false);
 
 
         }
-        else
-        {
+        //else
+        //{
 
 
-        }
+        //}
     }
 
     private void JumpInput()
@@ -529,7 +532,15 @@ public class MainPlayerController : MonoBehaviour
 
         }
 
-        
+        if (other.gameObject.tag == "ZoomOut")
+        {
+            isZoomOut = true;
+            cameraZoomOut.GetComponent<Camera>().enabled = true;
+            //cameraZoomOut.SetActive(true);
+        }
+
+
+
 
     }
 
@@ -553,7 +564,9 @@ public class MainPlayerController : MonoBehaviour
         anim.SetBool("IsSprint", false);
         isChagneSpeed = false;
         isShake = false;
-      
+        isZoomOut = false;
+        cameraZoomOut.GetComponent<Camera>().enabled = false;
+        //cameraZoomOut.SetActive(false);
     }
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {

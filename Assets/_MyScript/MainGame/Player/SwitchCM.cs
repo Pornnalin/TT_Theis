@@ -75,6 +75,15 @@ public class SwitchCM : MonoBehaviour
                 break;
 
             case false:
+
+                //if (MainPlayerController.instance.isZoomOut)
+                //{
+                //    currentView = view[2];
+                //}
+                //else
+                //{
+                //    currentView = view[0];
+                //}
                 currentView = view[0];
 
                 break;
