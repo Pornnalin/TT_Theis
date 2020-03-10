@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestSideScroll_2.unity
     guid: 8b8d4dd0d67d4a54e8a0ce175627c129
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level/TestLevel.unity
     guid: 9a3fccab74b3d9a4490fb4c832dff99e
   - enabled: 0
