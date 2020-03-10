@@ -95,7 +95,7 @@ public class PushItem : MonoBehaviour
     {
         isPush = false;
         MainPlayerController.instance.anim.SetBool("IsPush", false);
-        MainPlayerController.instance.anim.SetBool("IsPushHang", false);
+        //MainPlayerController.instance.anim.SetBool("IsPushHang", false);
         MainPlayerController.instance.charController.height = 1.86f;
 
     }
