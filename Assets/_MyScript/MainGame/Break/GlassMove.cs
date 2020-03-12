@@ -35,7 +35,7 @@ public class GlassMove : MonoBehaviour
     }
     IEnumerator wait()
     {
-
+       
         rigi.AddForce(-transform.right * 2f);
         //rigi.AddForce(Physics.gravity * rigi.mass * rigi.mass * 2);
         yield return new WaitForSeconds(0.5f);
