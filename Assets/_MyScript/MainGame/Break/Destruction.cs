@@ -49,7 +49,8 @@ public class Destruction : MonoBehaviour
     //}
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("EleBall")|| collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("EleBall") || collision.gameObject.CompareTag("Enemy"))
+            
         {
             Destroy(gameObject);
             //gameObject.GetComponent<MeshRenderer>().enabled = false;
