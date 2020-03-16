@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7184420010766132303}
   - component: {fileID: 7184420010767230607}
   - component: {fileID: 2563683799619375979}
+  - component: {fileID: 567341957544204450}
   m_Layer: 0
   m_Name: SmallSteel 1
   m_TagString: Untagged
@@ -94,3 +95,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &567341957544204450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184420010765301839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb59c28cdc54f04b804f1470f30c0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDie: 1.5
