@@ -45,12 +45,12 @@ public class MoveStell : MonoBehaviour
             renderer.sharedMaterial = switchLightMat[1];
 
         }
-        if (isMoveNext)
-        {
-            //renderer.sharedMaterial = switchLightMat[2];
-            //anim.SetTrigger("IsMoveNext");
-            StartCoroutine(Retrun());
-        }
+        //if (isMoveNext)
+        //{
+        //    //renderer.sharedMaterial = switchLightMat[2];
+        //    //anim.SetTrigger("IsMoveNext");
+        //    StartCoroutine(Retrun());
+        //}
         else
         {
             //renderer.sharedMaterial = switchLightMat[1];
@@ -102,13 +102,15 @@ public class MoveStell : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Box"))
-        {
-            renderer.sharedMaterial = switchLightMat[0];
-            isMoveNext = true; 
-            Debug.Log("Next!!");
-        }
+        //if (other.gameObject.CompareTag("Ob_Box"))
+        //{
+        //    renderer.sharedMaterial = switchLightMat[0];
+        //    isMoveNext = true; 
+        //    Debug.Log("Next!!");
+        //}
+       
     }
+   
 
     public void OnTriggerExit(Collider other)
     {
@@ -125,7 +127,7 @@ public class MoveStell : MonoBehaviour
     {
         
         yield return new WaitForSeconds(1.5f);
-        anim.SetBool("IsMoveNext", true);
+        //anim.SetBool("IsMoveNext", true);
         steelInfo.GetComponent<SteelInfo>().enabled = true;
 
         //steel.transform.position = Vector3.MoveTowards(steel.transform.position, postionTarget.position, 5f * Time.deltaTime);

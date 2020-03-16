@@ -58,13 +58,13 @@ public class SteelInfo : MonoBehaviour
 
     //public void OnTriggerEnter(Collider other)
     //{
-    //    if (other.gameObject.CompareTag("Player"))
+    //    if (other.gameObject.CompareTag("Box"))
     //    {
 
 
     //    }
 
-       
+
     //}
     public void OnTriggerExit(Collider other)
     {

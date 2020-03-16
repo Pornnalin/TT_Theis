@@ -73,6 +73,13 @@ public class PushItem : MonoBehaviour
    
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isPush = true;
+
+        }
+            //isPush = true;
+
         if (other.gameObject.CompareTag("FloorGlass"))
         {
             SoundManager.soundManager.audioS.volume = 1f;
