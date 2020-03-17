@@ -9,7 +9,8 @@ public class PushItem : MonoBehaviour
     Vector3 dir;
 
     public bool isPush;
-
+    bool isLeft;
+    bool isRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +21,11 @@ public class PushItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (isPush)
         {
-
-            if (GameManager.IsInputEnabled && !MainPlayerController.instance.isClimb && !MainPlayerController.instance.Isjump && !MainPlayerController.instance.isCrouched) 
+            if (GameManager.IsInputEnabled && !MainPlayerController.instance.isClimb && !MainPlayerController.instance.Isjump && !MainPlayerController.instance.isCrouched)
             {
+
 
                 //MainPlayerController.instance.anim.SetBool("IsPush", true);
                 //MainPlayerController.instance.charController.height = 1.7f;
@@ -33,51 +33,58 @@ public class PushItem : MonoBehaviour
                 //transform.Translate(Vector3.right * Time.deltaTime);
                 if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
                 {
+                    isPush = true;
+
                     MainPlayerController.instance.anim.speed = 0f;
 
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.D) && !MainPlayerController.instance.isCrouched) 
                     {
-                       
+
                         MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
                         transform.Translate(Vector3.right * Time.deltaTime);
-                        MainPlayerController.instance.charController.height = 1.7f;
+                        //MainPlayerController.instance.charController.height = 1.7f;
                     }
 
-                }
-               
 
-               else if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
+                }
+
+
+                else if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
                 {
+                    isPush = true;
+
                     MainPlayerController.instance.anim.speed = 0f;
 
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.A) && !MainPlayerController.instance.isCrouched) 
                     {
-                       
+
                         MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
                         transform.Translate(Vector3.left * Time.deltaTime);
-                        MainPlayerController.instance.charController.height = 1.7f;
+                        //MainPlayerController.instance.charController.height = 1.7f;
                     }
                 }
 
-                else
-                {
-                    MainPlayerController.instance.anim.SetBool("IsPush", false);
-                }
+
+            }
+            else
+            {
+                MainPlayerController.instance.anim.SetBool("IsPush", false);
             }
         }
-       
+
     }
+
    
    
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isPush = true;
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    isPush = true;
 
-        }
+        //}
             //isPush = true;
 
         if (other.gameObject.CompareTag("FloorGlass"))
@@ -101,6 +108,7 @@ public class PushItem : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         isPush = false;
+        Debug.Log("outofbox");
         MainPlayerController.instance.anim.SetBool("IsPush", false);
         //MainPlayerController.instance.anim.SetBool("IsPushHang", false);
         MainPlayerController.instance.charController.height = 1.86f;
