@@ -5,7 +5,8 @@ using UnityEngine;
 public class EventBoxFall : MonoBehaviour
 {
     public Rigidbody rigi;
-    public Animator animator;
+    //public Animator animator;
+    public GameObject target;
     //public GameObject box;
     bool isPush;
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class EventBoxFall : MonoBehaviour
         if (isPush)
         {
             rigi.isKinematic = false;
-
+            Destroy(target);
             //box.GetComponent<Rigidbody>().AddForce(Vector3.back * 5f);
             Debug.Log("'d");
         }

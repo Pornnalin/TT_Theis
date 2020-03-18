@@ -7,9 +7,12 @@ public class SteelInfo : MonoBehaviour
 {
     //public GameObject blockWay;
     public GameObject deadZone;
+    public GameObject box;
     public bool isPlayerStay;
     public float time;
-    public GameObject ai;
+    public Animator anim;
+    public EventBoxFall boxFall;
+    //public GameObject ai;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +51,9 @@ public class SteelInfo : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isPlayerStay = true;
+            Destroy(box);
+            gameObject.GetComponent<Collider>().enabled = false;
+            boxFall.GetComponent<EventBoxFall>().enabled = false;
 
         }
         else
@@ -75,7 +81,8 @@ public class SteelInfo : MonoBehaviour
     }
     IEnumerator wait()
     {
-        Destroy(ai);
+        //Destroy(ai);
+        anim.SetBool("IsMoveNext", false);
         yield return new WaitForSeconds(time);
         deadZone.SetActive(true);
 

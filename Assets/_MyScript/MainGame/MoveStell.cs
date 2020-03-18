@@ -22,7 +22,7 @@ public class MoveStell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        steelInfo.GetComponent<SteelInfo>().enabled = false;
+        //steelInfo.GetComponent<SteelInfo>().enabled = false;
         //origin = steel.transform.position;
         //origin = steel.transform.eulerAngles;
         //renderer.sharedMaterial = switchLightMat[];
@@ -46,17 +46,17 @@ public class MoveStell : MonoBehaviour
             renderer.sharedMaterial = switchLightMat[1];
 
         }
-        if (!triggerBoxFor.isStuck)
-        {
-            //renderer.sharedMaterial = switchLightMat[2];
-            //anim.SetTrigger("IsMoveNext");
-            //anim.SetBool("IsMoveNext", true);
-            StartCoroutine(Retrun());
-        }
-        else
-        {
-            //renderer.sharedMaterial = switchLightMat[1];
-        }
+        //if (!triggerBoxFor.isStuck)
+        //{
+        //    //renderer.sharedMaterial = switchLightMat[2];
+        //    //anim.SetTrigger("IsMoveNext");
+        //    //anim.SetBool("IsMoveNext", true);
+        //    StartCoroutine(Retrun());
+        //}
+        //else
+        //{
+        //    //renderer.sharedMaterial = switchLightMat[1];
+        //}
 
         //if (!isMoveNext && !isMove) 
         //{
@@ -129,7 +129,8 @@ public class MoveStell : MonoBehaviour
     {
         
         yield return new WaitForSeconds(1.5f);
-        anim.SetBool("IsMoveNext", true);
+        //anim.SetBool("IsMoveNext", true);
+        
         steelInfo.GetComponent<SteelInfo>().enabled = true;
 
         //steel.transform.position = Vector3.MoveTowards(steel.transform.position, postionTarget.position, 5f * Time.deltaTime);

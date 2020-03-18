@@ -23,7 +23,7 @@ public class TriggerBoxForStop : MonoBehaviour
         if (other.gameObject.CompareTag("Ob_Box"))
         {
             anim.speed = 0f;
-            isStuck = true;
+            //isStuck = true;
         }
     }
 
@@ -33,7 +33,7 @@ public class TriggerBoxForStop : MonoBehaviour
         {
            
             anim.speed = 1f;
-            isStuck = false;
+            //isStuck = false;
         }
     }
 }
