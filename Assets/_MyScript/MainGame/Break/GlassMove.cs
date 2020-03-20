@@ -41,6 +41,7 @@ public class GlassMove : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         //rigi.constraints = RigidbodyConstraints.None;
         rigi.useGravity = true;
+        Destroy(gameObject, 8f);
     }
 
     
