@@ -23,11 +23,18 @@ public class ShowImage : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        isStay = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isStay = true;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        imageRed.gameObject.SetActive(true);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            imageRed.gameObject.SetActive(true);
+        }
+        //imageRed.gameObject.SetActive(true);
      
         
     }
