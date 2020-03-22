@@ -11,6 +11,9 @@ public class PushItem : MonoBehaviour
     public bool isPush;
     bool isLeft;
     bool isRight;
+     public bool isMove;
+
+    //public BlockBin blockBin;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,7 @@ public class PushItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPush)
+        if (isPush) 
         {
             if (GameManager.IsInputEnabled && !MainPlayerController.instance.isClimb && !MainPlayerController.instance.Isjump && !MainPlayerController.instance.isCrouched)
             {
@@ -34,18 +37,19 @@ public class PushItem : MonoBehaviour
                 if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
                 {
                     isPush = true;
-
+                    isMove = true;
                     MainPlayerController.instance.anim.speed = 0f;
 
-                    if (Input.GetKey(KeyCode.D) && !MainPlayerController.instance.isCrouched) 
+                    if (Input.GetKey(KeyCode.D) && !MainPlayerController.instance.isCrouched && isMove) 
                     {
 
                         MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
-                        transform.Translate(Vector3.right * Time.deltaTime);
+                        transform.Translate(Vector3.right * Time.deltaTime * speed);
                         //MainPlayerController.instance.charController.height = 1.7f;
                     }
 
+                   
 
                 }
 
@@ -53,15 +57,15 @@ public class PushItem : MonoBehaviour
                 else if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
                 {
                     isPush = true;
-
+                    
                     MainPlayerController.instance.anim.speed = 0f;
 
-                    if (Input.GetKey(KeyCode.A) && !MainPlayerController.instance.isCrouched) 
+                    if (Input.GetKey(KeyCode.A) && !MainPlayerController.instance.isCrouched)
                     {
 
                         MainPlayerController.instance.anim.speed = 1f;
                         MainPlayerController.instance.anim.SetBool("IsPush", true);
-                        transform.Translate(Vector3.left * Time.deltaTime);
+                        transform.Translate(Vector3.left * Time.deltaTime * speed);
                         //MainPlayerController.instance.charController.height = 1.7f;
                     }
                 }
@@ -74,8 +78,8 @@ public class PushItem : MonoBehaviour
             }
         }
 
+       
     }
-
    
    
     public void OnTriggerEnter(Collider other)
@@ -85,7 +89,15 @@ public class PushItem : MonoBehaviour
         //    isPush = true;
 
         //}
-            //isPush = true;
+        //isPush = true;
+
+        if (other.gameObject.CompareTag("Bin"))
+        {
+            isMove = false;
+            speed = 0;
+
+            Debug.Log("Bin");
+        }
 
         if (other.gameObject.CompareTag("FloorGlass"))
         {
@@ -115,43 +127,43 @@ public class PushItem : MonoBehaviour
 
     }
 
-    public void checkRotaion()
-    {
-        if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
-        {
-            //MainPlayerController.instance.anim.SetBool("IsPush", true);
-            MainPlayerController.instance.charController.height = 1.7f;
+    //public void checkRotaion()
+    //{
+    //    if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)
+    //    {
+    //        //MainPlayerController.instance.anim.SetBool("IsPush", true);
+    //        MainPlayerController.instance.charController.height = 1.7f;
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(Vector3.right * Time.deltaTime);
+    //        if (Input.GetKey(KeyCode.D))
+    //        {
+    //            transform.Translate(Vector3.right * Time.deltaTime);
 
-            }
+    //        }
           
 
-            //MainPlayerController.instance.anim.SetBool("IsPush", true);
-            //MainPlayerController.instance.charController.height = 1.7f;
-            ////rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
-            //transform.Translate(Vector3.right * Time.deltaTime);
+    //        //MainPlayerController.instance.anim.SetBool("IsPush", true);
+    //        //MainPlayerController.instance.charController.height = 1.7f;
+    //        ////rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
+    //        //transform.Translate(Vector3.right * Time.deltaTime);
 
-            Debug.Log("0");
-        }
-        if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
-        {
-            //MainPlayerController.instance.anim.SetBool("IsPush", true);
-            MainPlayerController.instance.charController.height = 1.7f;
+    //        Debug.Log("0");
+    //    }
+    //    if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
+    //    {
+    //        //MainPlayerController.instance.anim.SetBool("IsPush", true);
+    //        MainPlayerController.instance.charController.height = 1.7f;
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(Vector3.left * Time.deltaTime);
+    //        if (Input.GetKey(KeyCode.A))
+    //        {
+    //            transform.Translate(Vector3.left * Time.deltaTime);
 
-            }
+    //        }
 
            
-            //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
+    //        //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
 
 
-            Debug.Log("180");
-        }
-    }
+    //        Debug.Log("180");
+    //    }
+    //}
 }

@@ -26,6 +26,7 @@ TagManager:
   - ZoomOut
   - Wall
   - EleBall
+  - Bin
   layers:
   - Default
   - TransparentFX
