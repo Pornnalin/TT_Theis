@@ -12,7 +12,10 @@ public class FlashBallMove : MonoBehaviour
     public float speed;
     public FlashBallFind flashBallFind;
     public float time;
+    public Vector3 target;
+    public GameObject caseModel;
     bool isStop = false;
+    bool isSpawnCase;
     //private float startTime;
     //private float journeyLength;
 
@@ -46,7 +49,7 @@ public class FlashBallMove : MonoBehaviour
     }
     public void StartMove()
     {
-        if (!isStop && !flashBallFind.isBodyDead) 
+        if (!isStop && !flashBallFind.isBodyDead)
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
 
@@ -58,9 +61,19 @@ public class FlashBallMove : MonoBehaviour
     }
     IEnumerator FindSomthing()
     {
+        if (flashBallFind.isSpawnToAnother)
+        {
+            Instantiate(caseModel, target, Quaternion.identity);
+            flashBallFind.isSpawnToAnother = false;
+        }
+        //Instantiate(caseModel, target, Quaternion.identity);
         yield return new WaitForSeconds(time);
         transform.Translate(speed * Time.deltaTime, 0, 0);
+
     }
+
+   }
+    
     // void OnTriggerEnter(Collider other)
     //{
     //    if (other.gameObject.CompareTag("Player"))
@@ -70,6 +83,7 @@ public class FlashBallMove : MonoBehaviour
     //    }
 
     //}
-}
+
+
 
     

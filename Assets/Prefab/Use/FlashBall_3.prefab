@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 100
   isBodyDead: 0
+  isSpawnToAnother: 0
 --- !u!114 &3021834324845103968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,9 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e4d5f737231e64fb4ca0f47c3aba7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.4
+  speed: 4
   flashBallFind: {fileID: 8448324738749752537}
   time: 2
+  target: {x: 53.49, y: -0.145, z: -1.73}
+  caseModel: {fileID: 5192952557210649062, guid: ad00267e6442e804cbf00dab06107b19,
+    type: 3}
 --- !u!54 &646148077841158989
 Rigidbody:
   m_ObjectHideFlags: 0
