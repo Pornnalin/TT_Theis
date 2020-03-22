@@ -17,12 +17,22 @@ public class TriggerBoxForStop : MonoBehaviour
     {
         
     }
-   
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ob_Box"))
+        {
+            //anim.speed = 0f;
+            anim.SetBool("Shake", true);
+            //isStuck = true;
+        }
+
+    }
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Ob_Box"))
         {
-            anim.speed = 0f;
+            //anim.speed = 0f;
+            anim.SetBool("Shake",true);
             //isStuck = true;
         }
     }
@@ -31,8 +41,8 @@ public class TriggerBoxForStop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ob_Box"))
         {
-           
-            anim.speed = 1f;
+            anim.SetBool("Shake", false);
+            //anim.speed = 1f;
             //isStuck = false;
         }
     }

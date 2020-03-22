@@ -7,6 +7,7 @@ public class SteelInfo : MonoBehaviour
 {
     //public GameObject blockWay;
     public GameObject deadZone;
+    public GameObject deadZoneSec;
     public GameObject box;
     public bool isPlayerStay;
     public float time;
@@ -19,6 +20,7 @@ public class SteelInfo : MonoBehaviour
     {
         //blockWay.SetActive(false);
         deadZone.SetActive(false);
+        deadZoneSec.SetActive(false);
     }
 
     // Update is called once per frame
@@ -82,9 +84,12 @@ public class SteelInfo : MonoBehaviour
     IEnumerator wait()
     {
         //Destroy(ai);
-        anim.SetBool("IsMoveNext", false);
+        anim.SetBool("IsMoveNext", true);
+        //anim.SetBool("IsMove", true);
         yield return new WaitForSeconds(time);
         deadZone.SetActive(true);
+        deadZoneSec.SetActive(true);
+
 
     }
 

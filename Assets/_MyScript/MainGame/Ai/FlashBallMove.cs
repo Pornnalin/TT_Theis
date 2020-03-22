@@ -10,6 +10,9 @@ public class FlashBallMove : MonoBehaviour
     //public GameObject flashBall;
 
     public float speed;
+    public FlashBallFind flashBallFind;
+    public float time;
+    bool isStop = false;
     //private float startTime;
     //private float journeyLength;
 
@@ -38,9 +41,26 @@ public class FlashBallMove : MonoBehaviour
     //}
     public void Update()
     {
+        StartMove();
+        //transform.Translate(speed * Time.deltaTime, 0, 0);
+    }
+    public void StartMove()
+    {
+        if (!isStop && !flashBallFind.isBodyDead) 
+        {
+            transform.Translate(speed * Time.deltaTime, 0, 0);
+
+        }
+        else
+        {
+            StartCoroutine(FindSomthing());
+        }
+    }
+    IEnumerator FindSomthing()
+    {
+        yield return new WaitForSeconds(time);
         transform.Translate(speed * Time.deltaTime, 0, 0);
     }
-
     // void OnTriggerEnter(Collider other)
     //{
     //    if (other.gameObject.CompareTag("Player"))

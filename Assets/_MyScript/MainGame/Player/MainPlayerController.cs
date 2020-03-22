@@ -380,15 +380,30 @@ public class MainPlayerController : MonoBehaviour
                     num = 0;
                     Debug.Log("hitCeiling");
                 }
+               
                 else
                 {
-                    if (Input.GetKeyUp(KeyCode.C))
+                    if (Input.GetKeyUp(KeyCode.C) && _isStayInCave == false) 
                     {
+                       
+                        isStartCrouched = false;
                         anim.SetBool("IsStartCrouched", false);
+                        anim.SetBool("IsCrouching", false);
                     }
+                    isCrouched = false;
+                    isStartCrouched = false;
+                    anim.SetBool("IsStartCrouched", false);
+                    anim.SetBool("IsCrouching", false);
+
                 }
                 //hit.collider.gameObject.GetComponent<ChangeColor>().BeenHit();
+              
+
                 Debug.Log("i've hit somthing");
+                //num = 0;
+                //isCrouched = false;
+                //isStartCrouched = false;
+                //anim.SetBool("IsStartCrouched", false);
             }
             else
             {
@@ -403,6 +418,11 @@ public class MainPlayerController : MonoBehaviour
             //anim.SetBool("IsStartCrouched", false);
 
 
+        }
+
+        if (num > 2)
+        {
+            num = 0;
         }
         //else
         //{

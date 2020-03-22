@@ -8,6 +8,7 @@ public class FlashBallFind : MonoBehaviour
     public float distance;
     private bool spawnCase = false;
     private bool findTarget;
+    public bool isBodyDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,12 @@ public class FlashBallFind : MonoBehaviour
                     spawnCase = true;
                     GameManager._gameEnd = true;
                   
+                }
+
+                if (hitInfo.collider.CompareTag("Enemy"))
+                {
+                    isBodyDead = true;
+                    Debug.Log("deadBody");
                 }
 
                 else
