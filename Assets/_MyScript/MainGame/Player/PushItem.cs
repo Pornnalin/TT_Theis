@@ -57,10 +57,11 @@ public class PushItem : MonoBehaviour
                 else if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 180)
                 {
                     isPush = true;
-                    
+                    isMove = true;
+
                     MainPlayerController.instance.anim.speed = 0f;
 
-                    if (Input.GetKey(KeyCode.A) && !MainPlayerController.instance.isCrouched)
+                    if (Input.GetKey(KeyCode.A) && !MainPlayerController.instance.isCrouched && isMove) 
                     {
 
                         MainPlayerController.instance.anim.speed = 1f;
