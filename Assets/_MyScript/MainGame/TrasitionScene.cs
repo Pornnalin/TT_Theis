@@ -82,7 +82,27 @@ public class TrasitionScene : MonoBehaviour
 
     }
 
-    
+    public void Menu()
+    {
+        StartCoroutine(WaitLoadMenu());
+    }
 
-  
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+    IEnumerator WaitLoadMenu()
+    {
+        anim.SetTrigger("End");
+        //anim.SetBool("EndGame", true);
+        //LoadSceneNext();
+        yield return new WaitForSeconds(1.5f);
+        LoadMenu();
+
+    }
+
+
+
+
+
 }
