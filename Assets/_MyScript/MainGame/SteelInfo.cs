@@ -89,6 +89,7 @@ public class SteelInfo : MonoBehaviour
         yield return new WaitForSeconds(time);
         deadZone.SetActive(true);
         deadZoneSec.SetActive(true);
+        anim.GetComponent<Animator>().enabled = false;
 
 
     }
