@@ -8,6 +8,7 @@ public class PauseGame : MonoBehaviour
 {
     public Animator bgPauseAnim;
     public Animator[] textAnim;
+    bool isStop = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +35,21 @@ public class PauseGame : MonoBehaviour
             }
             bgAnimtionOpen();
         }
+        //if (isStop)
+        //{
+        //    bgPauseAnim.GetComponent<Animator>().enabled = false;
+
+        //    foreach (Animator anim in textAnim)
+        //    {
+        //        anim.GetComponent<Animator>().enabled = false;
+        //    }
+        //}
     }
 
    
     public void bgAnimtionOpen()
     {
+        //isStop = false;
         bgPauseAnim.SetTrigger("Open");
 
         foreach (Animator anim in textAnim)
@@ -55,19 +66,21 @@ public class PauseGame : MonoBehaviour
 
     IEnumerator waitToClose()
     {
-        bgPauseAnim.SetTrigger("Close");
+        Time.timeScale = 1f;
 
+        bgPauseAnim.SetTrigger("Close");
+        //isStop = true;
         foreach (Animator anim in textAnim)
         {
             anim.SetTrigger("Close");
         }
-        yield return new WaitForSeconds(1f);
-
-        foreach (Animator anim in textAnim)
-        {
-            anim.GetComponent<Animator>().enabled = false;
-        }
-        bgPauseAnim.GetComponent<Animator>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        //isStop = true;
+        //foreach (Animator anim in textAnim)
+        //{
+        //    anim.GetComponent<Animator>().enabled = false;
+        //}
+        //bgPauseAnim.GetComponent<Animator>().enabled = false;
 
     }
 
@@ -79,46 +92,46 @@ public class PauseGame : MonoBehaviour
         {
             anim.SetTrigger("Close");
         }
+        GameManager._gameEnd = true;
+        TrasitionScene.Trasition.EndGame();
 
-        StartCoroutine(waitToClose());
-        
     }
+    //IEnumerator waitToCloseAndToRest()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    //isStop = true;
+    //    //foreach (Animator anim in textAnim)
+    //    //{
+    //    //    anim.GetComponent<Animator>().enabled = false;
+    //    //}
+    //    TrasitionScene.Trasition.EndGame();
+
+    //    //bgPauseAnim.GetComponent<Animator>().enabled = false;
+
+    //}
 
     public void Menu()
     {
         Time.timeScale = 1f;
         TrasitionScene.Trasition.Menu();
+        GameManager._gameEnd = true;
+
         bgPauseAnim.SetTrigger("Close");
         foreach (Animator anim in textAnim)
         {
             anim.SetTrigger("Close");
         }
-        StartCoroutine(waitToCloseAndToMenu());
+        //StartCoroutine(waitToCloseAndToMenu());
     }
 
-    IEnumerator waitToCloseAndToRest()
-    {
-        yield return new WaitForSeconds(1f);
+   
+    //IEnumerator waitToCloseAndToMenu()
+    //{
+    //    yield return new WaitForSeconds(1f);
 
-        foreach (Animator anim in textAnim)
-        {
-            anim.GetComponent<Animator>().enabled = false;
-        }
-        TrasitionScene.Trasition.EndGame();
-        bgPauseAnim.GetComponent<Animator>().enabled = false;
+    //    TrasitionScene.Trasition.Menu();
+    //    //bgPauseAnim.GetComponent<Animator>().enabled = false;
 
-    }
-    IEnumerator waitToCloseAndToMenu()
-    {
-        yield return new WaitForSeconds(1f);
-
-        foreach (Animator anim in textAnim)
-        {
-            anim.GetComponent<Animator>().enabled = false;
-        }
-        TrasitionScene.Trasition.Menu();
-        bgPauseAnim.GetComponent<Animator>().enabled = false;
-
-    }
+    //}
 
 }
