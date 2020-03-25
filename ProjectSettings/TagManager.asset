@@ -13,20 +13,18 @@ TagManager:
   - FB
   - CPC
   - Box
-  - CheackNewMap
   - StayC
   - DeadZone
   - Wood
-  - TestCamera
   - SetAi
   - ChangeSpeed
   - Slow
   - FloorGlass
   - CameraShake
-  - ZoomOut
   - Wall
   - EleBall
   - Bin
+  - JumpAi
   layers:
   - Default
   - TransparentFX

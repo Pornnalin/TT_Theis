@@ -49,7 +49,7 @@ public class EnemyControllerAnother : MonoBehaviour
     {
         if (GameManager.IsInputEnabled && GameManager._gameEnd == false) 
         {
-            agent.speed = speedNav;
+           
 
             float distanceToPlayer = Vector3.Distance(transform.position, MainPlayerController.instance.transform.position);
             //Debug.Log(distanceToPlayer + "position");
@@ -102,8 +102,9 @@ public class EnemyControllerAnother : MonoBehaviour
                 case AIState.IsFollower:
 
                     agent.SetDestination(MainPlayerController.instance.transform.position);
-                   
+                    agent.speed = speedNav;
                     anim.SetBool("IsMoving", true);
+                    anim.SetBool("Jump", false);
 
                     if (isStop)
                     {
@@ -120,7 +121,8 @@ public class EnemyControllerAnother : MonoBehaviour
 
                 case AIState.Jump:
 
-                    anim.SetTrigger("Jump");
+                    anim.SetBool("IsMoving", false);
+                    anim.SetBool("Jump", true);
 
                     break;
             }
@@ -161,13 +163,29 @@ public class EnemyControllerAnother : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Getup"))
+        if (other.gameObject.CompareTag("JumpAi"))
         {
-            currentState = AIState.Jump;
+            agent.speed = 5f;
+            //anim.SetBool("Jump", true);
+
+            //currentState = AIState.Jump;
         }
     }
 
-   
+    public void OnTriggerExit(Collider other)
+    {
+        agent.speed = speedNav;
+        //anim.SetBool("Jump", false);
+
+        //currentState = AIState.IsFollower;
+
+
+
+
+
+    }
+
+
 
 
 }
