@@ -9,13 +9,15 @@ public class PauseGame : MonoBehaviour
     public Animator bgPauseAnim;
     public Animator[] textAnim;
     bool isStop = false;
+    int num = 0;
     // Start is called before the first frame update
     void Start()
     {
-        bgPauseAnim.GetComponent<Animator>().enabled = false;
+        //bgPauseAnim.GetComponent<Animator>().enabled = false;
+        bgPauseAnim.gameObject.SetActive(false);
         foreach(Animator anim in textAnim)
         {
-            anim.GetComponent<Animator>().enabled = false;
+            anim.gameObject.SetActive(false);
         }
       
     }
@@ -23,18 +25,23 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && num == 0) 
         {
-            Time.timeScale = 0f;
-           
-            bgPauseAnim.GetComponent<Animator>().enabled = true;
-
-            foreach (Animator anim in textAnim)
+            num++;
+            if (num == 1)
             {
-                anim.GetComponent<Animator>().enabled = true;
+                Time.timeScale = 0f;
+
+                bgPauseAnim.gameObject.SetActive(true);
+                foreach (Animator anim in textAnim)
+                {
+                    anim.gameObject.SetActive(true);
+                }
+                bgAnimtionOpen();
             }
-            bgAnimtionOpen();
+            
         }
+        
         //if (isStop)
         //{
         //    bgPauseAnim.GetComponent<Animator>().enabled = false;
@@ -67,7 +74,7 @@ public class PauseGame : MonoBehaviour
     IEnumerator waitToClose()
     {
         Time.timeScale = 1f;
-
+        num = 0;
         bgPauseAnim.SetTrigger("Close");
         //isStop = true;
         foreach (Animator anim in textAnim)
@@ -86,6 +93,7 @@ public class PauseGame : MonoBehaviour
 
     public void RestScen()
     {
+        num = 0;
         Time.timeScale = 1f;
         bgPauseAnim.SetTrigger("Close");
         foreach (Animator anim in textAnim)
@@ -112,6 +120,7 @@ public class PauseGame : MonoBehaviour
 
     public void Menu()
     {
+        num = 0;
         Time.timeScale = 1f;
         TrasitionScene.Trasition.Menu();
         GameManager._gameEnd = true;

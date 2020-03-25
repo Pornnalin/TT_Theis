@@ -117,6 +117,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             anim.SetBool("IsMoving", false);
+            agent.enabled = false;
            
         }
 

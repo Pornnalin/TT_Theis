@@ -18,7 +18,7 @@ public class EnemyControllerAnother : MonoBehaviour
     public AudioSource audioSource;
     public enum AIState
     {
-        /*isIdle, IsPatrolling, */IsFollower,Stop
+        /*isIdle, IsPatrolling, */IsFollower,Stop,Jump
     }
     public AIState currentState;
 
@@ -36,19 +36,21 @@ public class EnemyControllerAnother : MonoBehaviour
         //waitCounter = waitAtPoint;
 
         agent.baseOffset = -0.1f;
-        speedNav = 10.2f;
+        //speedNav = 10.2f;
         agent.speed = speedNav;
         currentState = AIState.IsFollower;
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
+        audioSource.volume = 0.3f;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.IsInputEnabled)
+        if (GameManager.IsInputEnabled && GameManager._gameEnd == false) 
         {
+            agent.speed = speedNav;
+
             float distanceToPlayer = Vector3.Distance(transform.position, MainPlayerController.instance.transform.position);
             //Debug.Log(distanceToPlayer + "position");
             switch (currentState)
@@ -107,7 +109,7 @@ public class EnemyControllerAnother : MonoBehaviour
                     {
                         currentState = AIState.Stop;
                     }
-
+ 
                     break;
 
                 case AIState.Stop:
@@ -116,7 +118,11 @@ public class EnemyControllerAnother : MonoBehaviour
 
                     break;
 
+                case AIState.Jump:
 
+                    anim.SetTrigger("Jump");
+
+                    break;
             }
           
 
@@ -126,6 +132,7 @@ public class EnemyControllerAnother : MonoBehaviour
         else
         {
             anim.SetBool("IsMoving", false);
+            agent.enabled = false;
             audioSource.volume = 0f;
 
         }
@@ -152,4 +159,15 @@ public class EnemyControllerAnother : MonoBehaviour
         //audioSource.Stop();
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Getup"))
+        {
+            currentState = AIState.Jump;
+        }
+    }
+
+   
+
+
 }
