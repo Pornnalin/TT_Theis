@@ -7,7 +7,7 @@ public class PlaformDestruction : MonoBehaviour
     public GameObject prefab;
     //public GameObject des;
     public float time;
-    //public Transform spawnPosition;
+    public Transform spawnPosition;
     //public GameObject origin;
     //public Transform postionSpawn;
     // Start is called before the first frame update
@@ -40,7 +40,8 @@ public class PlaformDestruction : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
-        Instantiate(prefab,transform.position, transform.rotation);
+        Instantiate(prefab, spawnPosition.transform.position, Quaternion.Euler(-90, 0, 0));
+        gameObject.GetComponent<Collider>().enabled = false;
 
     }
 }

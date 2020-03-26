@@ -512,7 +512,12 @@ ModelImporter:
     4300198: Cylinder_cell.099
     4300200: Cylinder_cell.100
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1d4334ddf85227e4ab2a2ddb5c3ee2c0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

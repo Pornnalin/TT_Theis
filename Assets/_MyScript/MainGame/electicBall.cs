@@ -30,7 +30,7 @@ public class electicBall : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
 
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, 3.5f);
             Debug.Log("SmashWall");
         }
     }

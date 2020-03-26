@@ -24162,6 +24162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPlane
       objectReference: {fileID: 0}
+    - target: {fileID: 5362030469980657048, guid: 56e82043979e78b4492a86ef0ad2edff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e82043979e78b4492a86ef0ad2edff, type: 3}
 --- !u!1001 &5567946884541032530
