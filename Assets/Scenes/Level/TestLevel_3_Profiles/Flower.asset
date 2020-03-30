@@ -111,7 +111,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 0
-    value: 3
+    value: 0
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -139,10 +139,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 0
-    value: 0
+    value: -24
   tint:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -18
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -180,23 +180,23 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 6
   mixerBlueOutGreenIn:
     overrideState: 0
-    value: 0
+    value: 21
   mixerBlueOutBlueIn:
     overrideState: 0
-    value: 100
+    value: 130
   lift:
     overrideState: 1
     value: {x: 0.5594409, y: 0.693825, z: 1, w: 0}
   gamma:
-    overrideState: 0
-    value: {x: 0.80950654, y: 0.7461127, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.7682062, y: 0.7106228, z: 1, w: 0}
   gain:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 0.91436714, y: 1, z: 0.9827382, w: 0}
   masterCurve:
     overrideState: 0
     value:
