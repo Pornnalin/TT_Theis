@@ -6,6 +6,7 @@ public class EventAnimPost : MonoBehaviour
 {
     Animator anim;
     public GameObject blockWay;
+    public GameObject des;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class EventAnimPost : MonoBehaviour
         {
             anim.SetBool("Play", true);
             blockWay.SetActive(true);
+            Destroy(des);
         }
     }
 

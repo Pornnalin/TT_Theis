@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class EventriggerDie : MonoBehaviour
 {
     public GameObject evenDie;
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class EventriggerDie : MonoBehaviour
         GameManager._gameEnd = true;
         evenDie.SetActive(true);
         gameObject.GetComponent<Collider>().enabled = false;
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(time);
         SceneManager.LoadScene("TestLevel_4");
 
     }
