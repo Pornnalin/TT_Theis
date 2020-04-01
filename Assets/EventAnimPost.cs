@@ -25,6 +25,7 @@ public class EventAnimPost : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("changclolo");
             anim.SetBool("Play", true);
             blockWay.SetActive(true);
             Destroy(des);
