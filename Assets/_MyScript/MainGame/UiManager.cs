@@ -20,8 +20,7 @@ public class UiManager : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
-        Debug.Log("Quit");
+        StartCoroutine(WaitExit());
     }
 
     public void OnTriggerEnter(Collider other)
@@ -32,7 +31,15 @@ public class UiManager : MonoBehaviour
         }
         
     }
+    IEnumerator WaitExit()
+    {
+        TrasitionScene.Trasition.anim.SetTrigger("End");
+        //anim.SetBool("EndGame", true);
+        //LoadSceneNext();
+        yield return new WaitForSeconds(1.5f);
+        Application.Quit();
 
+    }
 }
 
     
