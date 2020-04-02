@@ -41,10 +41,16 @@ public class MenuUi : MonoBehaviour
     {
      
         anim.SetTrigger("Click");
+        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.PlaySound(soundInGame.click_sound);
     }
     public void Hover()
     {
+
         anim.SetTrigger("Hover");
+        SoundManager.soundManager.PlaySound(soundInGame.hover_sound);
+        SoundManager.soundManager.audioS.volume = 1f;
+
     }
 
     public void IdleExit()
@@ -53,11 +59,14 @@ public class MenuUi : MonoBehaviour
     }
     public void ClickExit()
     {
-        
+        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.PlaySound(soundInGame.click_sound);
         animExit.SetTrigger("Click");
     }
     public void HoverExit()
     {
+        SoundManager.soundManager.PlaySound(soundInGame.hover_sound);
+        SoundManager.soundManager.audioS.volume = 1f;
         animExit.SetTrigger("Hover");
     }
 

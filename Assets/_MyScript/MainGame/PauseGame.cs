@@ -133,7 +133,19 @@ public class PauseGame : MonoBehaviour
         //StartCoroutine(waitToCloseAndToMenu());
     }
 
-   
+    public void Hover()
+    {
+        Debug.Log("Hover");
+        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.PlaySound(soundInGame.hover_sound);
+    }
+    public void Click()
+    {
+        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.PlaySound(soundInGame.click_sound);
+    }
+
+
     //IEnumerator waitToCloseAndToMenu()
     //{
     //    yield return new WaitForSeconds(1f);
