@@ -9,6 +9,8 @@ public class TriggerBoxForStop : MonoBehaviour
     public bool isStuck;
     public GameObject on;
     public GameObject off;
+    public GameObject sound;
+    bool isSound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,14 @@ public class TriggerBoxForStop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isSound)
+        {
+            sound.SetActive(true);
+        }
+        else
+        {
+            sound.SetActive(false);
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -36,6 +45,7 @@ public class TriggerBoxForStop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ob_Box"))
         {
+            isSound = true;
             anim.speed = 0f;
             animLight.GetComponent<Animator>().enabled = true;
             on.SetActive(false);
@@ -49,6 +59,7 @@ public class TriggerBoxForStop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ob_Box"))
         {
+            isSound = false;
             //anim.SetBool("Shake", false);
             //anim.speed = 1f;
             StartCoroutine(waitToPlay());

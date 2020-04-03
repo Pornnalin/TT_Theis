@@ -46,10 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioS: {fileID: 0}
   em: {fileID: 8300000, guid: ef011084ef729e2429d1eb9c17ff1306, type: 3}
-  cd: {fileID: 0}
-  hit: {fileID: 0}
-  footStep: {fileID: 0}
-  glassBreak: {fileID: 0}
+  cd: {fileID: 8300000, guid: 1f34d591c412c5646af793fb1f6918a3, type: 3}
+  hit: {fileID: 8300000, guid: 36ac705706923cc4bafe4392aad66214, type: 3}
+  footStep: {fileID: 8300000, guid: 8e406cc16247c3843b5c07f0f8604a66, type: 3}
+  glassBreak: {fileID: 8300000, guid: 340e8cab290ce6346b08d625adf68124, type: 3}
+  shutter: {fileID: 8300000, guid: d4c9612869e758a48bf3f7d7bf498286, type: 3}
+  eletric: {fileID: 8300000, guid: aec42b8dded492140a0295575a9a2198, type: 3}
+  crack: {fileID: 8300000, guid: ca26c5a69c5e92a41a9e9e9254dea03f, type: 3}
+  window: {fileID: 8300000, guid: 7180961def9286c40a31cf3920c5c625, type: 3}
+  click: {fileID: 8300000, guid: 3891563d6f84a8e4c871d2a3907a39c8, type: 3}
+  hover: {fileID: 8300000, guid: 71eb4ae45159c4e43b10cba9108eeb88, type: 3}
+  alarm: {fileID: 8300000, guid: 8a5b06c3065cfeb4eabeabfae448c649, type: 3}
+  powerOn: {fileID: 8300000, guid: 458868a54db916f4d9b4e585976ae128, type: 3}
 --- !u!82 &3033762661273136118
 AudioSource:
   m_ObjectHideFlags: 0

@@ -41,8 +41,12 @@ public class DotQu : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(Showtext());
-        StartCoroutine(waitForSound());
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(Showtext());
+            StartCoroutine(waitForSound());
+        }
+        
 
     }
     public void OnTriggerExit(Collider other)

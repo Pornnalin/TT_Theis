@@ -89,7 +89,7 @@ public class TrasitionScene : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu_2");
     }
     IEnumerator WaitLoadMenu()
     {

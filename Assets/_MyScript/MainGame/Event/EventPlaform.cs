@@ -94,7 +94,8 @@ public class EventPlaform : MonoBehaviour
                 thisLightOff.SetActive(false);
                 isOff = true;
                 gameObject.GetComponent<Collider>().enabled = false;
-
+                SoundManager.soundManager.PlaySound(soundInGame.powerOn_sound);
+                SoundManager.soundManager.audioS.volume = 0.3f;
                 //Debug.Log(thisLightOff.activeSelf);
 
             }
