@@ -26,7 +26,7 @@ public class FlashBallMove : MonoBehaviour
         //    startTime = Time.time;
         //    journeyLength = Vector3.Distance(startPos.position, endPos.position);
         transform.Translate(-speed * Time.deltaTime, 0, 0);
-        Destroy(this.gameObject, 30f);
+        Destroy(this.gameObject, 20f);
         //}}
 
     }

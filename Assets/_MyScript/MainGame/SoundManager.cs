@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager soundManager;
     [HideInInspector]
     public AudioSource audioS;
-    public AudioClip em, cd, hit, footStep, glassBreak, shutter, eletric, crack, window, click, hover,alarm,powerOn;
+    public AudioClip em, cd, hit, footStep, glassBreak, shutter, eletric, crack, window, click, hover,alarm,powerOn,woodSmash;
 
 
     
@@ -105,6 +105,11 @@ public class SoundManager : MonoBehaviour
                 //audioS.volume = 1f;
                 audioS.PlayOneShot(powerOn);
                 break;
+
+            case soundInGame.woodSmash_sound:
+                //audioS.volume = 1f;
+                audioS.PlayOneShot(woodSmash);
+                break;
         }
     }
 
@@ -117,7 +122,7 @@ public class SoundManager : MonoBehaviour
 public enum soundInGame
 {
     em_sound,countDown_sound,hit_sound,footStep_sound,glass_sound,
-    shutter_sound,eletric_sound,crack_sound,window_sound,click_sound,hover_sound,alarm_sound,powerOn_sound
+    shutter_sound,eletric_sound,crack_sound,window_sound,click_sound,hover_sound,alarm_sound,powerOn_sound,woodSmash_sound
 }
 
 

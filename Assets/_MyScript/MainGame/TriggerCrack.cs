@@ -40,7 +40,8 @@ public class TriggerCrack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wood"))
         {
-            
+            SoundManager.soundManager.PlaySound(soundInGame.woodSmash_sound);
+            SoundManager.soundManager.audioS.volume = 0.3f;
             Instantiate(prefab, potionSpawn[0].position, Quaternion.identity);
             Instantiate(prefab, potionSpawn[1].position, Quaternion.identity);
             Destroy(origin);

@@ -1621,10 +1621,10 @@ AnimatorStateMachine:
     m_Position: {x: 684, y: -408, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102202854095211792}
-    m_Position: {x: 684, y: -60, z: 0}
+    m_Position: {x: 672, y: -84, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102213743171860298}
-    m_Position: {x: 600, y: -588, z: 0}
+    m_Position: {x: 720, y: -660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102633776004499844}
     m_Position: {x: 516, y: -732, z: 0}

@@ -16,6 +16,7 @@ public class EnemyControllerAnother : MonoBehaviour
     bool isStop;
     //public AudioClip walk;
     public AudioSource audioSource;
+    public AudioSource audioSourceWalk;
     public enum AIState
     {
         /*isIdle, IsPatrolling, */IsFollower,Stop,Jump
@@ -39,8 +40,8 @@ public class EnemyControllerAnother : MonoBehaviour
         //speedNav = 10.2f;
         agent.speed = speedNav;
         currentState = AIState.IsFollower;
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.3f;
+        //audioSource = GetComponent<AudioSource>();
+        //audioSource.volume = 0.3f;
     }
 
 
@@ -139,6 +140,12 @@ public class EnemyControllerAnother : MonoBehaviour
 
         }
 
+        if (isStop)
+        {
+            StartCoroutine(waitSound());
+
+        }
+
     }
     public void OnTriggerStay(Collider other)
     {
@@ -146,7 +153,7 @@ public class EnemyControllerAnother : MonoBehaviour
         {
             Debug.Log("stay!!");
             isStop = true;
-            audioSource.volume = 0f;
+            audioSourceWalk.volume = 0f;
             //StartCoroutine(waitSound());
 
         }
@@ -156,7 +163,7 @@ public class EnemyControllerAnother : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         audioSource.volume -= 0.5f * Time.deltaTime / 3f;
-        
+       
         //audioSource.volume = 0.1f;
         //audioSource.Stop();
 

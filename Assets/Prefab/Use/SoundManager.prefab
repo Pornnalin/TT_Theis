@@ -58,6 +58,7 @@ MonoBehaviour:
   hover: {fileID: 8300000, guid: 71eb4ae45159c4e43b10cba9108eeb88, type: 3}
   alarm: {fileID: 8300000, guid: 8a5b06c3065cfeb4eabeabfae448c649, type: 3}
   powerOn: {fileID: 8300000, guid: 458868a54db916f4d9b4e585976ae128, type: 3}
+  woodSmash: {fileID: 8300000, guid: 7109f8a93e389c44db451003f7f034ac, type: 3}
 --- !u!82 &3033762661273136118
 AudioSource:
   m_ObjectHideFlags: 0

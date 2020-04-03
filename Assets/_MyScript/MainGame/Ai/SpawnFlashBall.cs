@@ -36,8 +36,8 @@ public class SpawnFlashBall : MonoBehaviour
         {
             isSpawn = true;
             ////GameObject Fb = Instantiate(pefabFlash, postionSpawn.transform.position, Quaternion.identity) as GameObject;
-            SoundManager.soundManager.audioS.volume = 0.8f;
-            SoundManager.soundManager.PlaySound(soundInGame.hit_sound);
+            //SoundManager.soundManager.audioS.volume = 0.8f;
+            //SoundManager.soundManager.PlaySound(soundInGame.hit_sound);
             //Rigidbody rigi;
             //rigi = Instantiate(pefabFlash, newPostionSpawn.position, newPostionSpawn.rotation) as Rigidbody;
             Debug.Log("PlayeSpound");
