@@ -9,7 +9,7 @@ public class LoadMenu : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene("Menu_2");
-        //CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
+        CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
     }
 
     // Update is called once per frame

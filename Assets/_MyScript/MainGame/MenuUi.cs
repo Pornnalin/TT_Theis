@@ -39,7 +39,7 @@ public class MenuUi : MonoBehaviour
     }
     public void Click()
     {
-        CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
+        //CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
         anim.SetTrigger("Click");
         SoundManager.soundManager.audioS.volume = 1f;
         SoundManager.soundManager.PlaySound(soundInGame.click_sound);

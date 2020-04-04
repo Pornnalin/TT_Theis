@@ -39,7 +39,7 @@ public class CollisonSound : MonoBehaviour
 
     IEnumerator waitSoundWindow()
     {
-        SoundManager.soundManager.audioS.volume = 0.7f;
+        SoundManager.soundManager.audioS.volume = 0.9f;
         SoundManager.soundManager.PlaySound(soundInGame.window_sound);
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);

@@ -7,7 +7,7 @@ public class EventAnimPost : MonoBehaviour
 {
     Animator anim;
     public GameObject blockWay;
-    public GameObject des;
+    public GameObject[] des;
     Color newCol;
     bool bConverted;
     // Start is called before the first frame update
@@ -40,7 +40,10 @@ public class EventAnimPost : MonoBehaviour
             Debug.Log("changclolo");
             anim.SetBool("Play", true);
             blockWay.SetActive(true);
-            Destroy(des);
+            foreach(GameObject game in des)
+            {
+                Destroy(game);
+            }
             bConverted = true;
             //RenderSettings.fogColor = newCol;
             //bConverted = ColorUtility.TryParseHtmlString("A17C67", out newCol);
