@@ -5,6 +5,7 @@ using UnityEngine;
 public class OpenObj : MonoBehaviour
 {
     public GameObject target;
+    public GameObject[] des;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,10 @@ public class OpenObj : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            foreach(GameObject game in des)
+            {
+                Destroy(game);
+            }
             target.SetActive(true);
             gameObject.GetComponent<Collider>().enabled = false;
         }

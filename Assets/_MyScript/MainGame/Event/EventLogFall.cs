@@ -5,6 +5,7 @@ using UnityEngine;
 public class EventLogFall : MonoBehaviour
 {
     public Rigidbody[] rigi;
+    
     // Start is called before the first frame update
     
     
@@ -12,21 +13,25 @@ public class EventLogFall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
     public void OnTriggerEnter(Collider other)
     {
-        foreach(Rigidbody g in rigi)
+        foreach (Rigidbody g in rigi)
         {
             g.useGravity = true;
             g.isKinematic = false;
         }
+       
+       
     }
 
     public void OnTriggerExit(Collider other)
     {
         gameObject.GetComponent<Collider>().enabled = false;
     }
+
+   
 }

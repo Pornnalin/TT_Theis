@@ -30,6 +30,7 @@ public class EventBoxFall : MonoBehaviour
         if (isPush)
         {
             rigi.isKinematic = false;
+            //Invoke("wait", 3);
             Destroy(target);
             //box.GetComponent<Rigidbody>().AddForce(Vector3.back * 5f);
             Debug.Log("'d");
@@ -41,5 +42,11 @@ public class EventBoxFall : MonoBehaviour
        
     }
 
-   
+    public void wait()
+    {
+        rigi.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
+    }
+
+
 }

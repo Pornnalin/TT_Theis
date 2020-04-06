@@ -3502,6 +3502,7 @@ GameObject:
   - component: {fileID: 795359104032688491}
   - component: {fileID: 168717631888500142}
   - component: {fileID: 2688802978969257465}
+  - component: {fileID: 2216142673620850884}
   m_Layer: 0
   m_Name: WoodFloor
   m_TagString: Untagged
@@ -3728,6 +3729,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDie: 3
+--- !u!114 &2216142673620850884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857517021921538240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b711f63e991af46b76f459a5b0dcaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4857517021921538244
 GameObject:
   m_ObjectHideFlags: 0

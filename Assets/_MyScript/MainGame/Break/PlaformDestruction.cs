@@ -40,6 +40,7 @@ public class PlaformDestruction : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
+
         Instantiate(prefab, spawnPosition.transform.position, Quaternion.Euler(-90, 0, 0));
         gameObject.GetComponent<Collider>().enabled = false;
 

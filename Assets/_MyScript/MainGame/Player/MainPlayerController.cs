@@ -503,7 +503,14 @@ public class MainPlayerController : MonoBehaviour
             
             Debug.Log("can get up");
         }
-       
+
+        if (other.gameObject.tag == "Slow")
+        {
+            SoundManager.soundManager.audioS.volume = 0.8f;
+            SoundManager.soundManager.PlaySound(soundInGame.slow_sound);
+
+        }
+
     }
     
     public void OnTriggerStay(Collider other)
