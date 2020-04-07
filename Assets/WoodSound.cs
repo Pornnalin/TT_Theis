@@ -8,7 +8,7 @@ public class WoodSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.soundManager.audioS.volume = 0.9f;
+        SoundManager.soundManager.audioS.volume = 0.5f;
         SoundManager.soundManager.PlaySound(soundInGame.woodSmash_sound);
     }
 

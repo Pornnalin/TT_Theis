@@ -506,7 +506,7 @@ public class MainPlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Slow")
         {
-            SoundManager.soundManager.audioS.volume = 0.8f;
+            SoundManager.soundManager.audioS.volume = 1f;
             SoundManager.soundManager.PlaySound(soundInGame.slow_sound);
 
         }
