@@ -93,9 +93,12 @@ public class TrasitionScene : MonoBehaviour
     }
     IEnumerator WaitLoadMenu()
     {
+        CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
+
         anim.SetTrigger("End");
         //anim.SetBool("EndGame", true);
         //LoadSceneNext();
+        //CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
         yield return new WaitForSeconds(1.5f);
         LoadMenu();
 

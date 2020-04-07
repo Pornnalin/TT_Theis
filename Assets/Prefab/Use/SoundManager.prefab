@@ -60,7 +60,8 @@ MonoBehaviour:
   powerOn: {fileID: 8300000, guid: 458868a54db916f4d9b4e585976ae128, type: 3}
   woodSmash: {fileID: 8300000, guid: 7109f8a93e389c44db451003f7f034ac, type: 3}
   woodDes: {fileID: 8300000, guid: cc72142e63674654fa8842923e62f213, type: 3}
-  slow: {fileID: 8300000, guid: bc7538b659608dc499c6170e9566a966, type: 3}
+  slow: {fileID: 8300000, guid: 185c302572dedb140b91bdcfde8dad02, type: 3}
+  log: {fileID: 8300000, guid: b66b990e4ea738344a86511105b4156f, type: 3}
 --- !u!82 &3033762661273136118
 AudioSource:
   m_ObjectHideFlags: 0

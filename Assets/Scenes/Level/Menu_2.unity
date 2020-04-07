@@ -16929,7 +16929,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh648002
+  m_Name: pb_Mesh336216
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -99810,7 +99810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PolyMesh:
-    name: pb_Mesh648002
+    name: pb_Mesh336216
     vertices:
     - {x: -0.5, y: -0.5, z: 0.5}
     - {x: 2.3458111, y: -0.4999999, z: 0.49999997}

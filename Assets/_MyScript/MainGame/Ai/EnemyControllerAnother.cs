@@ -154,6 +154,7 @@ public class EnemyControllerAnother : MonoBehaviour
             Debug.Log("stay!!");
             isStop = true;
             audioSourceWalk.volume = 0f;
+          
             //StartCoroutine(waitSound());
 
         }
@@ -162,7 +163,7 @@ public class EnemyControllerAnother : MonoBehaviour
     IEnumerator waitSound()
     {
         yield return new WaitForSeconds(0.1f);
-        audioSource.volume -= 0.5f * Time.deltaTime / 3f;
+        audioSource.volume -= 1f * Time.deltaTime / 10f;
        
         //audioSource.volume = 0.1f;
         //audioSource.Stop();

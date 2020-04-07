@@ -126,6 +126,7 @@ public class PauseGame : MonoBehaviour
         GameManager._gameEnd = true;
 
         bgPauseAnim.SetTrigger("Close");
+
         foreach (Animator anim in textAnim)
         {
             anim.SetTrigger("Close");

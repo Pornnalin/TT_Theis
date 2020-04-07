@@ -46,9 +46,8 @@ public class Interact : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                SoundManager.soundManager.PlaySound(soundInGame.powerOn_sound);
-                SoundManager.soundManager.audioS.volume = 0.1f;
-                //StartCoroutine(wait());
+
+                StartCoroutine(wait());
                 isPressE = true;
                 
 
@@ -57,7 +56,7 @@ public class Interact : MonoBehaviour
         }
         if (isPressE)
         {
-
+            
             gameObject.GetComponent<Renderer>().material = switchColor;
             this.gameObject.GetComponent<Collider>().enabled = false;
             //texSceond.SetActive(false);
@@ -102,12 +101,12 @@ public class Interact : MonoBehaviour
 
     }
 
-    //IEnumerator wait()
-    //{
-    //    texFist.SetActive(true);
-    //    yield return new WaitForSeconds(2f);
-    //    texFist.SetActive(false);
-    //    isShowText = false;
+    IEnumerator wait()
+    {
+        SoundManager.soundManager.PlaySound(soundInGame.powerOn_sound);
+        SoundManager.soundManager.audioS.volume = 0.1f;
+        yield return new WaitForSeconds(2f);
+       
 
-    //}
+    }
 }

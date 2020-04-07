@@ -10,14 +10,14 @@ public class MenuUi : MonoBehaviour
     public GameObject exitBu;
     public GameObject logo;
     public GameObject bg;
-    
+    //bool isGotoGame;
    
     //public float time;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        //isGotoGame = false;
         startBu.SetActive(false);
         logo.SetActive(false);
         exitBu.SetActive(false);
@@ -30,7 +30,12 @@ public class MenuUi : MonoBehaviour
         StartCoroutine(waitLogo());
         StartCoroutine(wait());
 
-      
+        //if (isGotoGame)
+        //{
+        //    CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
+        //    isGotoGame = false;
+        //}
+
 
     }
     public void Idle()
@@ -39,7 +44,7 @@ public class MenuUi : MonoBehaviour
     }
     public void Click()
     {
-        //CheckPointControl.checkPointControl.lastCheckPos = new Vector3(-51.8f, 0.267f, -1.73f);
+        //isGotoGame = true;
         anim.SetTrigger("Click");
         SoundManager.soundManager.audioS.volume = 1f;
         SoundManager.soundManager.PlaySound(soundInGame.click_sound);
