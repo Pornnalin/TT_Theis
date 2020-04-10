@@ -9,9 +9,12 @@ public class EventEletric : MonoBehaviour
     public GameObject[] obDes;
     Rigidbody rigib;
     public Rigidbody checkPip;
+    public GameObject blockWay;
     // Start is called before the first frame update
     void Start()
     {
+        blockWay.SetActive(false);
+
         rigib = GetComponent<Rigidbody>(); 
     }
 
@@ -31,7 +34,7 @@ public class EventEletric : MonoBehaviour
             checkPip.Sleep();
             //Debug.Log(rigib.IsSleeping());
             //Debug.Log(target.GetComponent<Rigidbody>().IsSleeping());
-            
+            blockWay.SetActive(true);
             //Destroy(obDes, 2f);
             foreach (GameObject game in stuffEle)
             {
@@ -43,7 +46,7 @@ public class EventEletric : MonoBehaviour
             foreach (GameObject game in obDes)
             {
                 //target.GetComponent<PushItem>().enabled = false;
-                Destroy(game, 2f);
+                Destroy(game, 0.5f);
 
             }
 

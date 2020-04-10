@@ -7,6 +7,7 @@ public class PushItem : MonoBehaviour
     Rigidbody _rigidbody;
     public float speed;
     Vector3 dir;
+    public float disGround;
 
     public bool isPush;
     bool isLeft;
@@ -19,6 +20,7 @@ public class PushItem : MonoBehaviour
     {
         isPush = false;
         _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.isKinematic = true;
     }
 
     // Update is called once per frame
@@ -81,8 +83,11 @@ public class PushItem : MonoBehaviour
 
        
     }
-   
-   
+    public void FixedUpdate()
+    {
+        CheckFloat();
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         //if (other.gameObject.CompareTag("Player"))
@@ -115,6 +120,7 @@ public class PushItem : MonoBehaviour
             MainPlayerController.instance.charController.height = 1.7f;
             isPush = true;
             
+            
         }
     }
 
@@ -126,6 +132,26 @@ public class PushItem : MonoBehaviour
         //MainPlayerController.instance.anim.SetBool("IsPushHang", false);
         MainPlayerController.instance.charController.height = 1.86f;
 
+    }
+
+    public void CheckFloat()
+    {
+        //if (isCrouched)
+        //{
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, Vector3.down, disGround + 0.1f))
+        {
+            Debug.DrawLine(transform.position, Vector3.down, Color.red);
+            Debug.Log("box in air");
+           _rigidbody.isKinematic = false;
+           
+
+        }
+        else
+        {
+            _rigidbody.isKinematic = true;
+
+        }
     }
 
     //public void checkRotaion()
@@ -140,7 +166,7 @@ public class PushItem : MonoBehaviour
     //            transform.Translate(Vector3.right * Time.deltaTime);
 
     //        }
-          
+
 
     //        //MainPlayerController.instance.anim.SetBool("IsPush", true);
     //        //MainPlayerController.instance.charController.height = 1.7f;
@@ -160,7 +186,7 @@ public class PushItem : MonoBehaviour
 
     //        }
 
-           
+
     //        //rigidbody.velocity = Vector3.right * Time.deltaTime * speed;
 
 

@@ -137,6 +137,7 @@ public class EnemyControllerAnother : MonoBehaviour
             anim.SetBool("IsMoving", false);
             agent.enabled = false;
             audioSource.volume = 0f;
+            audioSourceWalk.volume = 0f;
 
         }
 
