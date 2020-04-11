@@ -29,7 +29,7 @@ public class FootStep : MonoBehaviour
     }
     private void Step()
     {
-        audioSource.volume = 0.02f;
+        audioSource.volume = 0.01f;
         AudioClip clip = GetRandomClip();
         audioSource.PlayOneShot(clip);
     }
@@ -41,7 +41,7 @@ public class FootStep : MonoBehaviour
 
     private void Land()
     {
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.08f;
         AudioClip clipL = GetRandomClipLand();
         audioSource.PlayOneShot(clipL);
     }

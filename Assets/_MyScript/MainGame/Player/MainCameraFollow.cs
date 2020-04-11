@@ -28,6 +28,7 @@ public class MainCameraFollow : MonoBehaviour
 
     private void Update()
     {
+        
 
         Vector3 targetCampos = target.position + offset;
 

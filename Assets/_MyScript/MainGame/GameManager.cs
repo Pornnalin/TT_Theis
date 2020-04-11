@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         //anim.speed = 0;
         //Instantiate(MainPlayerController.instance.caseModel, MainPlayerController.instance.playerModel.transform.position, Quaternion.identity);
-        SoundManager.soundManager.audioS.volume = 0.3f;
+        SoundManager.soundManager.audioS.volume = 0.07f;
         SoundManager.soundManager.PlaySound(soundInGame.em_sound);
         yield return new WaitForSeconds(3f);
         SoundManager.soundManager.audioS.volume = 0f;

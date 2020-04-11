@@ -39,7 +39,7 @@ public class EventriggerDie : MonoBehaviour
         evenDie.SetActive(true);
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene("TestLevel_4");
+        SceneManager.LoadScene("Map_4");
 
     }
 }

@@ -6,6 +6,7 @@ public class CheckPoint : MonoBehaviour
 {
     private CheckPointControl check;
     public GameObject cpOn, cpOff;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class CheckPoint : MonoBehaviour
             check.lastCheckPos = transform.position;
             //check.lastCheckPosCamera = transform.position;
             //check.lastCheckPosCrounded = transform.position;
-
+          
         }
 
         cpOn.SetActive(true);

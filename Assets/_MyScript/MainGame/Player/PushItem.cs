@@ -20,7 +20,7 @@ public class PushItem : MonoBehaviour
     {
         isPush = false;
         _rigidbody = GetComponent<Rigidbody>();
-        _rigidbody.isKinematic = true;
+        //_rigidbody.isKinematic = true;
     }
 
     // Update is called once per frame
@@ -109,6 +109,8 @@ public class PushItem : MonoBehaviour
         {
             SoundManager.soundManager.audioS.volume = 1f;
             SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
+            _rigidbody.isKinematic = true;
+
         }
     }
 

@@ -26,7 +26,7 @@ public class EventLogFall : MonoBehaviour
             g.useGravity = true;
             g.isKinematic = false;
         }
-       
+        StartCoroutine(waitToCloseRigi());
        
     }
 
@@ -35,5 +35,13 @@ public class EventLogFall : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = false;
     }
 
-   
+   IEnumerator waitToCloseRigi()
+    {
+        yield return new WaitForSeconds(12.5f);
+        foreach (Rigidbody g in rigi)
+        {
+            g.useGravity = false;
+            g.isKinematic = true;
+        }
+    }
 }

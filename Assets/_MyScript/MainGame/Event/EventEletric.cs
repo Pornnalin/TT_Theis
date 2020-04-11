@@ -10,6 +10,7 @@ public class EventEletric : MonoBehaviour
     Rigidbody rigib;
     public Rigidbody checkPip;
     public GameObject blockWay;
+    bool isPlaySound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,22 @@ public class EventEletric : MonoBehaviour
         
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Box"))
+        {
+
+            SoundManager.soundManager.audioS.volume = 0.1f;
+            SoundManager.soundManager.PlaySound(soundInGame.turnOff_sound);
+        }
+    }
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            rigib.Sleep();
+
+            
+            //rigib.Sleep();
             target.GetComponent<PushItem>().enabled = false;
             target.GetComponent<Rigidbody>().Sleep();
             checkPip.Sleep();
