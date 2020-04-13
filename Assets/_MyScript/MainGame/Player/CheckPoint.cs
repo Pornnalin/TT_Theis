@@ -28,7 +28,10 @@ public class CheckPoint : MonoBehaviour
             check.lastCheckPos = transform.position;
             //check.lastCheckPosCamera = transform.position;
             //check.lastCheckPosCrounded = transform.position;
-          
+            gameObject.GetComponent<Collider>().enabled = false;
+            SoundManager.soundManager.PlaySound(soundInGame.checkPoint_sound);
+            SoundManager.soundManager.audioS.volume = 0.3f;
+
         }
 
         cpOn.SetActive(true);

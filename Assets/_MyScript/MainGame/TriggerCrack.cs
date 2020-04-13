@@ -67,6 +67,7 @@ public class TriggerCrack : MonoBehaviour
         //plumAnim.SetBool("Fall", true);
         plummet.GetComponent<Rigidbody>().useGravity = true;
         interact.isPressE = false;
+        Destroy(plummet, 5f);
     }
 
    

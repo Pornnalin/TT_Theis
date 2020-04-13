@@ -23,6 +23,10 @@ public class EvenSlowmootion : MonoBehaviour
     {
         
         Time.timeScale = 0.3f;
+
+        SoundManager.soundManager.PlaySound(soundInGame.slowAi_sound);
+        SoundManager.soundManager.audioS.volume = 0.3f;
+
         //audioSource.pitch = 0.3f;
     }
     public void timeNormal()
@@ -30,6 +34,6 @@ public class EvenSlowmootion : MonoBehaviour
       
         Time.timeScale = 1f;
         //audioSource.pitch = 1f;
-
+        SoundManager.soundManager.audioS.volume = 0f;
     }
 }
