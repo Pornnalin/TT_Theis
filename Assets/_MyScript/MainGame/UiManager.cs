@@ -13,6 +13,7 @@ public class UiManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+       
         TrasitionScene.Trasition.NextLevel();
     }
 
@@ -27,6 +28,8 @@ public class UiManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            StartCoroutine(Wait());
+            //MainPlayerController.instance.anim.SetFloat("Speed", 0);
             LoadNextLevel();
         }
         
@@ -38,6 +41,14 @@ public class UiManager : MonoBehaviour
         //LoadSceneNext();
         yield return new WaitForSeconds(1.5f);
         Application.Quit();
+
+    }
+
+    IEnumerator Wait()
+    {
+        MainPlayerController.instance.anim.SetFloat("Speed", 0);
+        GameManager._gameEnd = true;
+        yield return new WaitForSeconds(0.5f);
 
     }
 }
