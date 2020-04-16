@@ -7,6 +7,7 @@ public class EventPlaform : MonoBehaviour
     public GameObject[] wall;
     public GameObject cctv;
     public bool isSwtichOn;
+    //public MoveStell moveStell;
     public GameObject switchButton;
     public GameObject lightButtnOn;
     public GameObject lightButtOff;
@@ -29,7 +30,8 @@ public class EventPlaform : MonoBehaviour
         wall[1].SetActive(false);
         lightButtOff.SetActive(true);
         lightButtnOn.SetActive(false);
-        switchButton.gameObject.GetComponent<Collider>().enabled = false;
+        //switchButton.gameObject.GetComponent<Collider>().enabled = false;
+        switchButton.gameObject.SetActive(false);
         thisLightOn.SetActive(false);
         thisLightOff.SetActive(true);
        
@@ -55,16 +57,17 @@ public class EventPlaform : MonoBehaviour
             //gameObject.GetComponent<Collider>().enabled = false;
         }
 
-        if (isSwtichOn)
+        if (isSwtichOn) 
         {
             lightButtOff.SetActive(false);
             lightButtnOn.SetActive(true);
             cctv.SetActive(true);
             wall[0].SetActive(false);
             wall[1].SetActive(true);
-            switchButton.gameObject.GetComponent<Collider>().enabled = true;
+            //switchButton.gameObject.GetComponent<Collider>().enabled = true;
+            switchButton.gameObject.SetActive(true);
         }
-
+     
       
     }
 

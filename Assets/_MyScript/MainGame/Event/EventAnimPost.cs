@@ -27,7 +27,7 @@ public class EventAnimPost : MonoBehaviour
         {
             bConverted = ColorUtility.TryParseHtmlString("#806C61", out newCol);
             RenderSettings.fogColor = newCol;
-           
+            //anim.SetBool("Play", true);
 
         }
     }
