@@ -8,7 +8,7 @@ using TMPro;
 public class UiManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    public GameObject sound;
 
 
     public void LoadNextLevel()
@@ -31,6 +31,7 @@ public class UiManager : MonoBehaviour
             StartCoroutine(Wait());
             //MainPlayerController.instance.anim.SetFloat("Speed", 0);
             LoadNextLevel();
+            Destroy(sound);
         }
         
     }

@@ -94,7 +94,7 @@ public class PushRock : MonoBehaviour
 
         if (isLeft)
         {
-            _rigidbody.velocity = new Vector3(-0.1f, 0, 0);
+            _rigidbody.velocity = new Vector3(0.1f, 0, 0);
 
         }
 

@@ -7,13 +7,18 @@ public class EventBoxFall : MonoBehaviour
     public Rigidbody rigi;
     //public Animator animator;
     public GameObject target;
+    public AudioSource audioSource;
+    
+ 
     //public GameObject box;
     bool isPush;
+    
     // Start is called before the first frame update
     void Start()
     {
         //rigi.isKinematic = true;
         //rigi = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -47,6 +52,14 @@ public class EventBoxFall : MonoBehaviour
         rigi.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
     }
-
-
+    public void PlaySoundLift()
+    {
+        audioSource.Play();
+        Debug.Log("playsoundLift");
+    }
+    public void PauseSoundLift()
+    {
+        audioSource.Pause();
+        Debug.Log("PauseSoundLift");
+    }
 }

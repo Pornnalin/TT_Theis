@@ -10,6 +10,7 @@ public class TriggerBoxForStop : MonoBehaviour
     public GameObject on;
     public GameObject off;
     public GameObject sound;
+
     bool isSound = false;
 
     // Start is called before the first frame update
@@ -24,10 +25,12 @@ public class TriggerBoxForStop : MonoBehaviour
     {
         if (isSound)
         {
+            
             sound.SetActive(true);
         }
         else
         {
+            
             sound.SetActive(false);
         }
     }

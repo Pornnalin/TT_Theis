@@ -9,8 +9,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager soundManager;
     [HideInInspector]
     public AudioSource audioS;
-    public AudioClip em, cd, hit, footStep, glassBreak, shutter, eletric, crack, window, 
-        click, hover, alarm, powerOn, woodSmash, woodDes, slow, log, rockFall,turnOff,slowAi,checkPoint;
+    public AudioClip em, cd, hit, footStep, glassBreak, shutter, eletric, crack, window,
+        click, hover, alarm, powerOn, woodSmash, woodDes, slow, log, rockFall, turnOff, slowAi, checkPoint;
 
 
     
@@ -146,6 +146,8 @@ public class SoundManager : MonoBehaviour
                 //audioS.volume = 1f;
                 audioS.PlayOneShot(checkPoint);
                 break;
+
+           
         }
     }
 

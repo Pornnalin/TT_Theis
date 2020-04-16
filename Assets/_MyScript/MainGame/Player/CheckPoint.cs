@@ -30,7 +30,7 @@ public class CheckPoint : MonoBehaviour
             //check.lastCheckPosCrounded = transform.position;
             gameObject.GetComponent<Collider>().enabled = false;
             SoundManager.soundManager.PlaySound(soundInGame.checkPoint_sound);
-            SoundManager.soundManager.audioS.volume = 0.05f;
+            SoundManager.soundManager.audioS.volume = 0.1f;
 
         }
 

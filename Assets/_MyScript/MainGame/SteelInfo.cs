@@ -8,6 +8,7 @@ public class SteelInfo : MonoBehaviour
     //public GameObject blockWay;
     public GameObject deadZone;
     public GameObject deadZoneSec;
+    public GameObject deadZoneSec_2;
     public GameObject box;
     public bool isPlayerStay;
     public float time;
@@ -21,6 +22,7 @@ public class SteelInfo : MonoBehaviour
         //blockWay.SetActive(false);
         deadZone.SetActive(false);
         deadZoneSec.SetActive(false);
+        deadZoneSec_2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class SteelInfo : MonoBehaviour
             Destroy(box);
             gameObject.GetComponent<Collider>().enabled = false;
             boxFall.GetComponent<EventBoxFall>().enabled = false;
-
+           
         }
         else
         {
@@ -89,6 +91,7 @@ public class SteelInfo : MonoBehaviour
         yield return new WaitForSeconds(time);
         deadZone.SetActive(true);
         deadZoneSec.SetActive(true);
+        deadZoneSec_2.SetActive(true);
         anim.GetComponent<Animator>().enabled = false;
 
 

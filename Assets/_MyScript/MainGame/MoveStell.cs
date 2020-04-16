@@ -45,6 +45,7 @@ public class MoveStell : MonoBehaviour
             SoundManager.soundManager.PlaySound(soundInGame.powerOn_sound);
             SoundManager.soundManager.audioS.volume = 0.3f;
             anim.SetBool("IsMove", true);
+            
             renderer.sharedMaterial = switchLightMat[1];
 
         }
