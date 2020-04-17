@@ -90,7 +90,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 112000000, guid: 5bcc0881e8870df4a8d3461f11d11862,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -338,7 +338,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 733251456}
   smoothing: 7
-  player: {fileID: 0}
   offset: {x: 0, y: 0.83, z: -11.79}
 --- !u!114 &83207664
 MonoBehaviour:
@@ -2991,6 +2990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 30
+  enemyController: {fileID: 0}
 --- !u!1 &931138225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,6 +4427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 30
+  enemyController: {fileID: 0}
 --- !u!1 &1466840830
 GameObject:
   m_ObjectHideFlags: 0
@@ -9255,6 +9256,23 @@ MonoBehaviour:
   cd: {fileID: 8300000, guid: 1f34d591c412c5646af793fb1f6918a3, type: 3}
   hit: {fileID: 0}
   footStep: {fileID: 0}
+  glassBreak: {fileID: 0}
+  shutter: {fileID: 0}
+  eletric: {fileID: 0}
+  crack: {fileID: 0}
+  window: {fileID: 0}
+  click: {fileID: 0}
+  hover: {fileID: 0}
+  alarm: {fileID: 0}
+  powerOn: {fileID: 0}
+  woodSmash: {fileID: 0}
+  woodDes: {fileID: 0}
+  slow: {fileID: 0}
+  log: {fileID: 0}
+  rockFall: {fileID: 0}
+  turnOff: {fileID: 0}
+  slowAi: {fileID: 0}
+  checkPoint: {fileID: 0}
 --- !u!82 &1783243767
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9568,6 +9586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 30
+  enemyController: {fileID: 0}
 --- !u!1 &1930144386
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,6 +9632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 30
+  enemyController: {fileID: 0}
 --- !u!1 &2004934657
 GameObject:
   m_ObjectHideFlags: 0

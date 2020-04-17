@@ -164,7 +164,7 @@ public class EnemyControllerAnother : MonoBehaviour
     IEnumerator waitSound()
     {
         yield return new WaitForSeconds(0.1f);
-        audioSource.volume -= 1f * Time.deltaTime / 10f;
+        audioSource.volume -= 5f * Time.deltaTime / 10f;
        
         //audioSource.volume = 0.1f;
         //audioSource.Stop();
