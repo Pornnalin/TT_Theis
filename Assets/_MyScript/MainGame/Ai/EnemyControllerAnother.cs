@@ -17,6 +17,7 @@ public class EnemyControllerAnother : MonoBehaviour
     //public AudioClip walk;
     public AudioSource audioSource;
     public AudioSource audioSourceWalk;
+    
     public enum AIState
     {
         /*isIdle, IsPatrolling, */IsFollower,Stop,Jump

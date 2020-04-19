@@ -9,6 +9,22 @@ public class UiManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject sound;
+    public PauseGame pauseGame;
+
+
+    public void Update()
+    {
+        if (MainPlayerController.instance.isSlow)
+        {
+            pauseGame.GetComponent<PauseGame>().enabled = false;
+        }
+        else
+        {
+            pauseGame.GetComponent<PauseGame>().enabled = true;
+
+        }
+    }
+
 
 
     public void LoadNextLevel()

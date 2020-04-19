@@ -42,6 +42,7 @@ public class PlaformDestruction : MonoBehaviour
         Destroy(gameObject);
 
         Instantiate(prefab, spawnPosition.transform.position, Quaternion.Euler(-90, 0, 0));
+        //Instantiate(prefab, spawnPosition.transform.position, Quaternion.identity);
         gameObject.GetComponent<Collider>().enabled = false;
 
     }

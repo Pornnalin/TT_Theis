@@ -18,6 +18,7 @@ public class MainPlayerController : MonoBehaviour
     public Animator anim;
     float horizontaMove = 0f;
     public Transform scalePlayer;
+    public bool isSlow;
 
     [Header("Climb")]
     public bool isClimb = false;
@@ -537,7 +538,7 @@ public class MainPlayerController : MonoBehaviour
         {
             //jumpForce = 16f;
             //_moveSpeedCurrent = 7f;
-
+            isSlow = true;
             Time.timeScale = 0.4f;
 
         }
@@ -580,6 +581,7 @@ public class MainPlayerController : MonoBehaviour
         anim.SetBool("IsHang", false);
         //closeWay[0].SetActive(false);
         //closeWay[1].SetActive(true);
+        isSlow = false;
 
         _isStayInCave = false;
         _isOverview = false;

@@ -10,6 +10,7 @@ public class PauseGame : MonoBehaviour
     public Animator[] textAnim;
     bool isStop = false;
     int num = 0;
+    public AudioSource[] audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && num == 0) 
         {
+            PasueMusicBG();
             num++;
             if (num == 1)
             {
@@ -73,6 +75,7 @@ public class PauseGame : MonoBehaviour
 
     IEnumerator waitToClose()
     {
+        PlayMusicBG();
         Time.timeScale = 1f;
         num = 0;
         bgPauseAnim.SetTrigger("Close");
@@ -82,6 +85,11 @@ public class PauseGame : MonoBehaviour
             anim.SetTrigger("Close");
         }
         yield return new WaitForSeconds(0.5f);
+
+        foreach (Animator anim in textAnim)
+        {
+            anim.gameObject.SetActive(false);
+        }
         //isStop = true;
         //foreach (Animator anim in textAnim)
         //{
@@ -146,6 +154,20 @@ public class PauseGame : MonoBehaviour
         SoundManager.soundManager.PlaySound(soundInGame.click_sound);
     }
 
+    public void PasueMusicBG()
+    {
+        foreach(AudioSource audio in audioSource)
+        {
+            audio.Pause();
+        }
+    }
+    public void PlayMusicBG()
+    {
+        foreach (AudioSource audio in audioSource)
+        {
+            audio.Play();
+        }
+    }
 
     //IEnumerator waitToCloseAndToMenu()
     //{
