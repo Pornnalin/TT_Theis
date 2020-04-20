@@ -1484,13 +1484,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.171
+    value: 0.375
   size:
     overrideState: 1
     value: 0.97
   lumContrib:
     overrideState: 1
-    value: 0.493
+    value: 0.316
 --- !u!114 &114664574767880550
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1552,7 +1552,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.559
+    value: 0.463
   smoothness:
     overrideState: 1
     value: 0.251

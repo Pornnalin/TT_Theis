@@ -8,6 +8,7 @@ public class TriggerCrack : MonoBehaviour
     public GameObject origin;
     public Transform[] potionSpawn;
     public GameObject plummet;
+    public GameObject blockWay;
     public GameObject switchLight;
     public Interact interact;
     public Animator plumAnim;
@@ -19,7 +20,7 @@ public class TriggerCrack : MonoBehaviour
     void Start()
     {
         plummet.GetComponent<Rigidbody>().useGravity = false;
-
+        blockWay.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,6 +69,8 @@ public class TriggerCrack : MonoBehaviour
         plummet.GetComponent<Rigidbody>().useGravity = true;
         interact.isPressE = false;
         Destroy(plummet, 5f);
+        yield return new WaitForSeconds(2.5f);
+        blockWay.SetActive(true);
     }
 
    

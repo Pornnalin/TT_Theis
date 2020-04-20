@@ -16,6 +16,9 @@ public class FlashBallMove : MonoBehaviour
     public GameObject caseModel;
     bool isStop = false;
     bool isSpawnCase;
+ 
+   
+    
     //private float startTime;
     //private float journeyLength;
 
@@ -27,7 +30,9 @@ public class FlashBallMove : MonoBehaviour
         //    journeyLength = Vector3.Distance(startPos.position, endPos.position);
         transform.Translate(-speed * Time.deltaTime, 0, 0);
         Destroy(this.gameObject, 20f);
+      
         //}}
+        //source = GetComponent<AudioSource>();
 
     }
 
@@ -45,6 +50,9 @@ public class FlashBallMove : MonoBehaviour
     public void Update()
     {
         StartMove();
+
+        
+
         //transform.Translate(speed * Time.deltaTime, 0, 0);
     }
     public void StartMove()

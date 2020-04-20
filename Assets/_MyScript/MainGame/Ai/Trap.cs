@@ -6,18 +6,19 @@ public class Trap : MonoBehaviour
 {
     public GameObject spawnAi;
     public AudioSource soundStart;
+  
     // Start is called before the first frame update
     void Start()
     {
         spawnAi.SetActive(false);
 
-        soundStart.Pause();
+        soundStart.GetComponent<AudioSource>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       
     }
     public void OnTriggerEnter(Collider collision)
     {
@@ -26,7 +27,7 @@ public class Trap : MonoBehaviour
             spawnAi.SetActive(true);
             //SoundManager.soundManager.audioS.volume = 0.3f;
             //SoundManager.soundManager.PlaySound(soundInGame.hit_sound);
-            soundStart.Play();
+            soundStart.GetComponent<AudioSource>().enabled = true;
             this.gameObject.GetComponent<Collider>().enabled = false;
         }
 

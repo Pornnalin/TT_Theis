@@ -44,12 +44,12 @@ public class Interact : MonoBehaviour
     {
         if (isShowText)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
 
                 StartCoroutine(wait());
                 isPressE = true;
-                
+                isShowText = false;
 
 
             }
@@ -72,12 +72,12 @@ public class Interact : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
            
-            Debug.Log("press E");
+            
             //texSceond.SetActive(true);
             isShowText = true;
-            gameObject.GetComponent<Collider>().enabled = false;
+            //gameObject.GetComponent<Collider>().enabled = false;
 
-           
+
 
         }
     }
@@ -105,7 +105,7 @@ public class Interact : MonoBehaviour
     {
         SoundManager.soundManager.PlaySound(soundInGame.powerOn_sound);
         SoundManager.soundManager.audioS.volume = 0.1f;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
        
 
     }

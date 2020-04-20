@@ -11,7 +11,9 @@ public class PauseGame : MonoBehaviour
     bool isStop = false;
     int num = 0;
     public AudioSource[] audioSource;
+  
     // Start is called before the first frame update
+   
     void Start()
     {
         //bgPauseAnim.GetComponent<Animator>().enabled = false;
@@ -20,7 +22,8 @@ public class PauseGame : MonoBehaviour
         {
             anim.gameObject.SetActive(false);
         }
-      
+     
+
     }
 
     // Update is called once per frame
@@ -90,6 +93,7 @@ public class PauseGame : MonoBehaviour
         {
             anim.gameObject.SetActive(false);
         }
+       
         //isStop = true;
         //foreach (Animator anim in textAnim)
         //{
