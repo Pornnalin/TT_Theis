@@ -5,14 +5,14 @@ using UnityEngine;
 public class SpawnFlashBall : MonoBehaviour
 {
     public Transform postionSpawn;
- 
+    public GameObject flashBall;
     public Rigidbody pefabFlash;
     
     bool isSpawn;
     // Start is called before the first frame update
     void Start()
     {
-       
+        flashBall.SetActive(false);
 
     }
 
@@ -21,8 +21,8 @@ public class SpawnFlashBall : MonoBehaviour
     {
         if (isSpawn)
         {
-            Rigidbody rigi;
-            rigi = Instantiate(pefabFlash, postionSpawn.position, postionSpawn.rotation) as Rigidbody;
+            //Rigidbody rigi;
+            flashBall.SetActive(true);
             isSpawn = false;
           
         }
@@ -41,13 +41,14 @@ public class SpawnFlashBall : MonoBehaviour
             //Rigidbody rigi;
             //rigi = Instantiate(pefabFlash, newPostionSpawn.position, newPostionSpawn.rotation) as Rigidbody;
             Debug.Log("PlayeSpound");
+            gameObject.GetComponent<Collider>().enabled = false;
         }
            
     }
 
     public void OnTriggerExit(Collider other)
     {
-        gameObject.GetComponent<Collider>().enabled = false;
+        //gameObject.GetComponent<Collider>().enabled = false;
     }
 
    

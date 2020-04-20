@@ -107,9 +107,10 @@ public class PushItem : MonoBehaviour
 
         if (other.gameObject.CompareTag("FloorGlass"))
         {
-            SoundManager.soundManager.audioS.volume = 1f;
-            SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
-            _rigidbody.isKinematic = true;
+            //SoundManager.soundManager.audioS.volume = 1f;
+            //SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
+            //_rigidbody.isKinematic = true;
+            StartCoroutine(pushStop());
 
         }
     }
@@ -156,6 +157,14 @@ public class PushItem : MonoBehaviour
         }
     }
 
+    IEnumerator pushStop()
+    {
+        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
+        yield return new WaitForSeconds(0.3f);
+        _rigidbody.isKinematic = true;
+        gameObject.GetComponent<PushItem>().enabled = false;
+    }
     //public void checkRotaion()
     //{
     //    if (MainPlayerController.instance.playerModel.transform.rotation.eulerAngles.y == 0)

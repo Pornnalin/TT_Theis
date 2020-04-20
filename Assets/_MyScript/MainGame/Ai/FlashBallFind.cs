@@ -10,7 +10,7 @@ public class FlashBallFind : MonoBehaviour
     private bool findTarget;
     public bool isBodyDead = false;
     public bool isSpawnToAnother;
-
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +39,7 @@ public class FlashBallFind : MonoBehaviour
                     Debug.Log("PlayerDead2");
                     spawnCase = true;
                     GameManager._gameEnd = true;
-
+                  
                 }
 
                 else if (hitInfo.collider.CompareTag("FB"))
@@ -67,6 +67,7 @@ public class FlashBallFind : MonoBehaviour
                 //StartCoroutine(SpawnCase());
                 GameManager._GameManager.SpawnCase();
                 distance = 0f;
+                audio.volume -= 5f/10f;
                 spawnCase = false;
             }
 
@@ -84,6 +85,7 @@ public class FlashBallFind : MonoBehaviour
         SoundManager.soundManager.PlaySound(soundInGame.em_sound);
         yield return new WaitForSeconds(3f);
         SoundManager.soundManager.audioS.volume = 0f;
+        
         TrasitionScene.Trasition.EndGame();
     }
 

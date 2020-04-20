@@ -20,17 +20,24 @@ public class InteractText : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            text.SetActive(true);
+            StartCoroutine(ShowText());
 
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            text.SetActive(false);
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+        //    text.SetActive(false);
 
-        }
+        //}
+    }
+
+    IEnumerator ShowText()
+    {
+        text.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        text.SetActive(false);
     }
 }
