@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level/Map_4.unity
     guid: cf50c3313b0de9149b1b70aaa502f127
+  - enabled: 1
+    path: Assets/Scenes/Level/EndCredit.unity
+    guid: 2dacaaa714777c7479ca34dcae0f4419
   m_configObjects: {}
