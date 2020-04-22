@@ -511,7 +511,7 @@ public class MainPlayerController : MonoBehaviour
             SoundManager.soundManager.PlaySound(soundInGame.slow_sound);
 
         }
-
+       
     }
     
     public void OnTriggerStay(Collider other)

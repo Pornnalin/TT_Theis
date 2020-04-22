@@ -37,7 +37,8 @@ public class InteractText : MonoBehaviour
     IEnumerator ShowText()
     {
         text.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1f);
         text.SetActive(false);
+        gameObject.GetComponent<Collider>().enabled = false;
     }
 }
