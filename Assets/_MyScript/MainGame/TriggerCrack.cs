@@ -63,7 +63,7 @@ public class TriggerCrack : MonoBehaviour
     {
         plumAnim.SetBool("Fall", true);
       
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.8f);
         plumAnim.enabled = false;
         //plumAnim.SetBool("Fall", true);
         plummet.GetComponent<Rigidbody>().useGravity = true;

@@ -81,7 +81,7 @@ public class MainPlayerController : MonoBehaviour
         _centerCharacter = charController.center;
 
         checkPointControl = GameObject.FindGameObjectWithTag("CPC").GetComponent<CheckPointControl>();
-        transform.position = checkPointControl.lastCheckPos;
+        this.transform.position = checkPointControl.lastCheckPos;
         sphereCheck.SetActive(false);
         Time.timeScale = 1f;
         anim.speed = 1f;
