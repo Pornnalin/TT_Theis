@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (_gameEnd == true) 
         {
             //UIManager.iManager.endGameTxt.enabled = true;
+          
             IsInputEnabled = false;
             
             //MainPlayerController.instance.anim.SetFloat("Speed", 0f);
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         {
             //UIManager.iManager.endGameTxt.enabled = false;
             IsInputEnabled = true;
+           
         }
     }
     public void OnTriggerEnter(Collider other)

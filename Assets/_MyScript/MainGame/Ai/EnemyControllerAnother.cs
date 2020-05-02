@@ -139,7 +139,7 @@ public class EnemyControllerAnother : MonoBehaviour
             agent.enabled = false;
             audioSource.volume = 0f;
             audioSourceWalk.volume = 0f;
-
+            
         }
 
         if (isStop)
