@@ -25,6 +25,7 @@ TagManager:
   - EleBall
   - Bin
   - JumpAi
+  - ZoomOut
   layers:
   - Default
   - TransparentFX

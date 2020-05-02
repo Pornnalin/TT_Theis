@@ -560,6 +560,7 @@ public class MainPlayerController : MonoBehaviour
 
         }
 
+       
         //if (other.gameObject.tag == "ZoomOut")
         //{
         //    isZoomOut = true;
@@ -571,6 +572,7 @@ public class MainPlayerController : MonoBehaviour
 
 
     }
+   
 
     public void OnTriggerExit(Collider other)
     {
