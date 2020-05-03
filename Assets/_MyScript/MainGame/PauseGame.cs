@@ -51,13 +51,13 @@ public class PauseGame : MonoBehaviour
         }
         if (isPause)
         {
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
-            //Cursor.visible = false;
-            //Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         
         //if (isStop)

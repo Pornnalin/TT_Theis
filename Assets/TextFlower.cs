@@ -8,11 +8,12 @@ public class TextFlower : MonoBehaviour
     public TMP_Text dot;
     public string dotString;
     public Animator anim;
+    public GameObject sound;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        sound.SetActive(false);
         dot.enabled = false;
     }
 
@@ -69,6 +70,7 @@ public class TextFlower : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            sound.SetActive(true);
             StartCoroutine(waitForLookFlower());
             gameObject.GetComponent<Collider>().enabled = false;
             anim.SetBool("isFade", true);

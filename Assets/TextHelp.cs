@@ -34,7 +34,7 @@ public class TextHelp : MonoBehaviour
             Debug.Log("lenght" + dotString.Length);
 
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         dot.enabled = false;
     }
 
@@ -43,14 +43,15 @@ public class TextHelp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(Showtext());
-           
+            gameObject.GetComponent<Collider>().enabled = false;
+
         }
 
 
     }
     public void OnTriggerExit(Collider other)
     {
-        gameObject.GetComponent<Collider>().enabled = false;
+        //gameObject.GetComponent<Collider>().enabled = false;
     }
 
 }
