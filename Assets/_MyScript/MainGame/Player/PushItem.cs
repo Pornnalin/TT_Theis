@@ -159,7 +159,7 @@ public class PushItem : MonoBehaviour
 
     IEnumerator pushStop()
     {
-        SoundManager.soundManager.audioS.volume = 1f;
+        SoundManager.soundManager.audioS.volume = 0.1f;
         SoundManager.soundManager.PlaySound(soundInGame.glass_sound);
         yield return new WaitForSeconds(0.3f);
         _rigidbody.isKinematic = true;
